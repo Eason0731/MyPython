@@ -4,7 +4,7 @@ import re
 import shutil
 import time
 import sys
-from . import ViewPCInfos
+import ViewPCInfos
 
 def MainFunction():
     Choose = input ("""
