@@ -1,7 +1,7 @@
 # -*- coding: cp936 -*-
 import os
 import unittest
-from . import Getbrowser
+import Getbrowser
 import time
 from selenium import webdriver
 

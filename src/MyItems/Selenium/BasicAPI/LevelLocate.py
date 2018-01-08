@@ -2,7 +2,7 @@
 import unittest
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import sys
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 

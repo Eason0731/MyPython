@@ -2,7 +2,7 @@
 import unittest
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import sys
 
 class OperateTestObject(unittest.TestCase): #4

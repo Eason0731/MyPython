@@ -1,7 +1,7 @@
 import os
 from selenium import webdriver
 import unittest
-from . import Getbrowser
+import Getbrowser
 import time
 
 class SetBrowserWindow(unittest.TestCase): #3

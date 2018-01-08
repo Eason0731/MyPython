@@ -2,7 +2,7 @@
 import unittest
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import sys
 from selenium.webdriver.common.keys import Keys #Need to import package Keys
 

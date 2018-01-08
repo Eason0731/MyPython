@@ -1,7 +1,7 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from . import Getbrowser
+import Getbrowser
 
 class PythonOrgSearch(unittest.TestCase):
 

@@ -2,7 +2,7 @@
 import unittest
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import sys
 
 class GetTitleAndURL(unittest.TestCase): #1
