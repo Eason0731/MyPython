@@ -2,7 +2,7 @@
 import os
 import time
 import unittest
-from . import Getbrowser
+import Getbrowser
 
 class Login_WOP_With_WFB_Account(unittest.TestCase):
     def setUp(self):
