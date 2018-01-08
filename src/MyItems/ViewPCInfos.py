@@ -32,7 +32,7 @@ def GetPublicNetworkIP():
     import re,urllib.request,urllib.error,urllib.parse
     try:
         ipURL = urllib.request.urlopen('http://ip138.com/ip2city.asp').read() #'http://ip138.com/ip2city.asp' This site is available to search IP
-        publicip = re.search('\d+\.\d+\.\d+\.\d+',ipURL).group(0)
+        publicip = re.search('\d+\.\d+\.\d+\.\d+',str(ipURL)).group(0) #ipURL should be changed to string type on python3
     except Exception as e:
         publicip = str(e)
     return publicip
@@ -43,7 +43,8 @@ def os_version():
     c = wmi.WMI ()
     print("OS name and version: " + platform.platform())
     for sys in c.Win32_OperatingSystem(): 
-        print("Bits: " + sys.OSArchitecture.encode("UTF8"))
+        #print("Bits: " + sys.OSArchitecture.encode("UTF8"))
+        print("Bits: " + str(sys.OSArchitecture)) #sys.OSArchitecture should be changed to string type on python3
         print("Current process count: " + str(sys.NumberOfProcesses))
     print("       ")
 
