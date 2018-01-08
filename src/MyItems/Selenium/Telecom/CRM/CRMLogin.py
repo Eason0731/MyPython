@@ -3,7 +3,7 @@ import os
 import time
 import unittest
 from selenium import webdriver 
-from . import Getbrowser
+import Getbrowser
 
 class CRMLogin(unittest.TestCase):
     def setUp(self):
