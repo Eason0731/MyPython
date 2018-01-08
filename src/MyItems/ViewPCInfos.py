@@ -15,14 +15,14 @@ def ViewPCInfos():
     currentusername = getpass.getuser()
     mac = uuid.UUID(int = uuid.getnode()).hex[-12:]  
     mac_address = "-".join([mac[e:e+2] for e in range(0,11,2)])
-    #n_ip = re.search('\d+\.\d+\.\d+\.\d+',Popen('ipconfig', stdout=PIPE).stdout.read()).group(0)  
+    n_ip = re.search('\d+\.\d+\.\d+\.\d+',str(Popen('ipconfig', stdout=PIPE).stdout.read())).group(0) #Add a str here to suit on python3
     print("=====================PC Infos======================")
     os_version()
     cpu_mem() 
     disk()
     print("PC name: " + pcname)
     print("Current login user: " + currentusername)
-    #print("Intranet IP: " + n_ip)
+    print("Intranet IP: " + n_ip)
     print("Public network IP: " + GetPublicNetworkIP())
     print("Mac address: " + mac_address)
     print("===================================================")
