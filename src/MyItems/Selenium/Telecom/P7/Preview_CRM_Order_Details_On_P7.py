@@ -1,7 +1,7 @@
 # coding:utf-8
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import unittest
 
 class Preview_CRM_Order_Details_On_P7(unittest.TestCase):

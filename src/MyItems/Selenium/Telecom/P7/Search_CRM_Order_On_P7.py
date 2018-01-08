@@ -1,7 +1,7 @@
 # coding:utf-8
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import unittest
 
 class Search_CRM_Orders_On_P7(unittest.TestCase):

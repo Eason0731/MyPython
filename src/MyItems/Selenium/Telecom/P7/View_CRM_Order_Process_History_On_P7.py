@@ -1,7 +1,7 @@
 # coding:utf-8
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import unittest
 
 class View_CRM_Order_Process_History_On_P7(unittest.TestCase):

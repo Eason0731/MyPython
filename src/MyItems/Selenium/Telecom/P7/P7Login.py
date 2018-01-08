@@ -1,7 +1,7 @@
 # coding:utf-8
 import os
 import time
-from . import Getbrowser
+import Getbrowser
 import unittest
 
 class P7Login(unittest.TestCase):
