@@ -1,0 +1,26 @@
+1 --- GetTitleAndURL
+2 --- BackAndForward
+3 --- GetSimpleElement
+3.2 --- SetBrowserWindow
+4 --- OperateTestObject
+5 --- GetSomeAttributes
+6 --- MouseEvents
+7 --- KeyboardEvents
+8 --- Wait
+9 --- LocateElement
+10 --- LevelLocate
+11 --- LocateFrame
+11.2 --- OperateDialog
+13 --- Alert_Confirm_Prompt_Dialog
+13.2 --- HandleDropdownlist
+14 --- Pagination
+15 --- UploadFiles
+15.2 --- UseJavaScript
+16 --- UseJavaScriptToControlScrollbar
+19 --- HandleCookie
+20 --- GetAttributes
+
+Examples:
+UseJavaScriptOnSogou
+UnittestDemo
+JohnTestDemo
