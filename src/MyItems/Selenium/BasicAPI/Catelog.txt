@@ -1,24 +1,24 @@
 1 --- GetTitleAndURL
 2 --- BackAndForward
 3 --- GetSimpleElement
-3.2 --- SetBrowserWindow
-4 --- OperateTestObject
-5 --- GetSomeAttributes
-6 --- MouseEvents
-7 --- KeyboardEvents
-8 --- Wait
-9 --- LocateElement
-10 --- LevelLocate
-11 --- LocateFrame
-11.2 --- OperateDialog
-13 --- Alert_Confirm_Prompt_Dialog
-13.2 --- HandleDropdownlist
-14 --- Pagination
-15 --- UploadFiles
-15.2 --- UseJavaScript
-16 --- UseJavaScriptToControlScrollbar
-19 --- HandleCookie
-20 --- GetAttributes
+4 --- SetBrowserWindow
+5 --- OperateTestObject
+6 --- GetSomeAttributes
+7 --- MouseEvents
+8 --- KeyboardEvents
+9 --- Wait
+10 --- LocateElement
+11 --- LevelLocate
+12 --- LocateFrame
+13 --- OperateDialog
+14 --- Alert_Confirm_Prompt_Dialog
+15 --- HandleDropdownlist
+16 --- Pagination
+17 --- UploadFiles
+18 --- UseJavaScript
+19 --- UseJavaScriptToControlScrollbar
+20 --- HandleCookie
+21 --- GetAttributes
 
 Examples:
 UseJavaScriptOnSogou
