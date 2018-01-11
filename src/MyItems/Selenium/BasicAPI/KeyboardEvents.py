@@ -6,7 +6,7 @@ import Getbrowser
 import sys
 from selenium.webdriver.common.keys import Keys #Need to import package Keys
 
-class KeyboardEvents(unittest.TestCase): #7
+class KeyboardEvents(unittest.TestCase): #8
     def setUp(self):
         self.driver = Getbrowser.Chrome()
     

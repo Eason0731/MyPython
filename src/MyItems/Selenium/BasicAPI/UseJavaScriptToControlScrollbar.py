@@ -7,11 +7,11 @@ import sys
 from selenium.webdriver.support.ui import WebDriverWait #Need to import package WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 
-class UseJavaScriptToControlScrollbar(unittest.TestCase): #16
+class UseJavaScriptToControlScrollbar(unittest.TestCase): #19
     def setUp(self):
         self.driver = Getbrowser.Chrome()
     
-    def testUseJavaScriptToControlScrollbar(self): #16
+    def testUseJavaScriptToControlScrollbar(self): #19
         driver = self.driver
         URL = 'http://www.sogou.com'
         driver.get(URL)

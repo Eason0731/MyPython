@@ -6,7 +6,7 @@ import Getbrowser
 import sys
 from selenium.webdriver.support.ui import WebDriverWait #Need to import package WebDriverWait
 
-class OperateDialog(unittest.TestCase): #11
+class OperateDialog(unittest.TestCase): #13
     def setUp(self):
         self.driver = Getbrowser.Chrome()
         

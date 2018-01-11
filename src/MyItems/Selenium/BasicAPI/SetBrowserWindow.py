@@ -4,7 +4,7 @@ import unittest
 import Getbrowser
 import time
 
-class SetBrowserWindow(unittest.TestCase): #3
+class SetBrowserWindow(unittest.TestCase): #4
     def setUp(self):
         self.driver = Getbrowser.Chrome()
         time.sleep(3)

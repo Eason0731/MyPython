@@ -7,7 +7,7 @@ import sys
 from selenium.webdriver.support.ui import WebDriverWait #Need to import package WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 
-class UploadFiles(unittest.TestCase): #15
+class UploadFiles(unittest.TestCase): #17
     def setUp(self):
         self.driver = Getbrowser.IE()
     

@@ -6,7 +6,7 @@ import Getbrowser
 import sys
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 
-class LevelLocate(unittest.TestCase): #10
+class LevelLocate(unittest.TestCase): #11
     def setUp(self):
         self.driver = Getbrowser.Chrome()
     

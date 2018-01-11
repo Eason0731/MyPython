@@ -6,7 +6,7 @@ import Getbrowser
 import sys
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 
-class MouseEvents(unittest.TestCase): #6
+class MouseEvents(unittest.TestCase): #7
     def setUp(self):
         self.driver = Getbrowser.Chrome()
     

@@ -5,7 +5,7 @@ import time
 import Getbrowser
 import sys
 
-class GetSomeAttributes(unittest.TestCase): #5
+class GetSomeAttributes(unittest.TestCase): #6
     def setUp(self):
         self.driver = Getbrowser.Chrome()
         

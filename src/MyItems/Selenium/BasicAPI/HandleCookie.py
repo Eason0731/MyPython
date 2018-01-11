@@ -7,7 +7,7 @@ import sys
 from selenium.webdriver.support.ui import WebDriverWait #Need to import package WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 
-class HandleCookie(unittest.TestCase): #19
+class HandleCookie(unittest.TestCase): #20
     def setUp(self):
         self.driver = Getbrowser.Chrome()
         

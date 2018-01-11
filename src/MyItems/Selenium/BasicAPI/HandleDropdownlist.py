@@ -7,7 +7,7 @@ import sys
 from selenium.webdriver.support.ui import WebDriverWait #Need to import package WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains #Need to import package ActionChains
 
-class HandleDropdownlist(unittest.TestCase): #13
+class HandleDropdownlist(unittest.TestCase): #15
     def setUp(self):
         self.driver = Getbrowser.Chrome()
         
