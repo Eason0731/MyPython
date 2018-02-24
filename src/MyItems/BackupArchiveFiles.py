@@ -6,8 +6,8 @@ import time
 def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook):
     Choose = input("""
 =========Welcome to Backup Archive Files===========
-1. Backup archive files before reinstall OS
-2. Put back archive files after reinstall OS
+1. Backup archive files before reinstall Widnows
+2. Put back archive files after reinstall Widnows
 ===================================================
 Press AnyKey to Exit
 
