@@ -18,8 +18,8 @@ class CRMLogin(unittest.TestCase):
         if '服务器正忙或出错' in driver.page_source:
             print("CRM is maintaining or busy, please try later")
         else:
-            self.assertIn('UAT22',driver.title)
-
+            self.assertIn('上海电信客户关系管理系统',driver.page_source)
+            
             UserName = driver.find_element_by_name('SWEUserName')
             Password = driver.find_element_by_name('SWEPassword')
             LoginButton = driver.find_element_by_id('s_swepi_22')
@@ -33,7 +33,7 @@ class CRMLogin(unittest.TestCase):
             LoginButton.click()
             time.sleep(10)
 
-            self.assertIn('SetBusy',driver.page_source)
+            self.assertIn('UAT22',driver.title)
 
     def tearDown(self):
         self.driver.quit()
