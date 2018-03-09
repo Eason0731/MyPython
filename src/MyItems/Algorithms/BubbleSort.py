@@ -9,7 +9,7 @@ def BubbleSortbyASC():
                 List[i] = List[j]
                 List[j] = temp
 
-    print (List)
+    print ("The result of bubble sort order by ASC is: " + str(List))
     
 def BubbleSortbyDESC():
     List = [21,8,5,1,7,3,14]  
@@ -20,7 +20,7 @@ def BubbleSortbyDESC():
                 List[i] = List[j]
                 List[j] = temp
 
-    print (List)
+    print ("The result of bubble sort order by DESC is: " + str(List))
     
 if __name__ == '__main__':
     BubbleSortbyASC()
