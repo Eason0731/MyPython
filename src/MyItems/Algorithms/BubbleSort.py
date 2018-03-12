@@ -1,4 +1,5 @@
 import os
+import re
 
 def BubbleSortbyASC(List):
     for i in range(0,len(List)):
@@ -24,8 +25,10 @@ def BubbleSortbyCutsom(Number):
     List = []
     for i in range(0,int(Number)):
         ListNum = input("Please input the number " + str(i+1)+ ":")
-        if (ListNum.startswith('-') and ListNum[1:] or ListNum).isdigit():
-            List.append(int(ListNum))
+        #if (ListNum.startswith('-') and ListNum[1:] or ListNum).isdigit():
+        Regex = re.compile(r"^(-?\d+)(\.\d*)?$")
+        if re.match(Regex,ListNum):
+            List.append(float(ListNum))
         else:
             print (ListNum + " is a illegeal number and won't add it to the list!")
     BubbleSortbyASC(List)
