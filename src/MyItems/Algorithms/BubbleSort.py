@@ -30,7 +30,9 @@ def BubbleSortbyCutsom(Number):
         if re.match(Regex,ListNum):
             List.append(float(ListNum))
         else:
+            print ("===========================================================")
             print (ListNum + " is a illegeal number and won't add it to the list!")
+            print ("===========================================================")
     BubbleSortbyASC(List)
     BubbleSortbyDESC(List)
     
