@@ -34,6 +34,17 @@ def Triangle(A,B,C):
             print ("This is an ordinary triangle")
     else:
         print ("Cannot build a triangle")
+    Continue()
+
+def Continue():
+    while(1):
+        IsContinue = input("Continue or not?(Y/N) ")
+        if IsContinue.upper() == 'Y':
+            MainFunction()
+        elif IsContinue.upper() == 'N':
+            exit(1)
+        else:
+            print ("Do not input illegal character, please input again!")
 
 if __name__ == '__main__':
     MainFunction()
