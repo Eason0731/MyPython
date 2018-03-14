@@ -5,7 +5,7 @@ def MainFunction():
     while(1):
         A = input ("Please input the first edge: ")
         B = input ("Please input the second edge: ")
-        C = input ("Please input the third edge:: ")
+        C = input ("Please input the third edge: ")
     
         Regex = re.compile(r"^(-?\d+)(\.\d*)?$")
         if re.match(Regex,A) and re.match(Regex,B) and re.match(Regex,C):
