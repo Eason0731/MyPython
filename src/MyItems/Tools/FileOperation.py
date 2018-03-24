@@ -215,7 +215,7 @@ def ReplaceOnTxt(Dir):
                 if 'txt' in myFile:
                     k+=1
                     TxtFile = os.path.join(root,myFile)
-                    files = open (TxtFile,'r') 
+                    files = open (TxtFile,'r',errors='ignore') 
                     content = files.read()
                     files.close()
                     Original = Original.lower()
@@ -469,7 +469,7 @@ def FindOnTxt(Dir):
                     k+=1
                     i = 0
                     TxtFile = os.path.join(root,myFile)
-                    f = open (TxtFile, 'r')
+                    f = open (TxtFile, 'r', errors='ignore')
                     Filecontent = f.readlines()              
                     for eachline in Filecontent:
                         if Content.lower() in eachline.lower():
