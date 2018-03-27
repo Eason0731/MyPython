@@ -10,21 +10,20 @@ Choose number of people:
 
 """)
         if People == '1':
-            People = 'S'
-            ChooseLunch(People)
+            ChooseLunch('S')
             break
         elif People == '2':
-            People = 'M'
-            ChooseLunch(People)
+            ChooseLunch('M')
             break
         else:
             print ("Do not input illegal number, please input again!")
 
 def ChooseLunch(People):
-    if 'S' in People:
-        List1 = ['老广东','福荣祥','吉祥馄饨','原素西餐','黄焖鸡米饭','东池便当','大板牛肉饭']
-    elif 'M' in People:
-        List1 = ['麻辣香锅','黄焖鸡米饭','老广东','福荣祥']
+    List1 = ['老广东','福荣祥','吉祥馄饨','原素西餐','黄焖鸡米饭','东池便当','大板牛肉饭','桂林米粉','苏州羊肉面','麻辣烫']       
+    if 'M' in People:
+        List1.remove('原素西餐')
+        List1.append('麻辣香锅')
+        List1.append('小四川')
 
     print ("We decided that today's lunch is .....")
     random.shuffle(List1)
