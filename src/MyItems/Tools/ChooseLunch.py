@@ -19,7 +19,10 @@ Choose number of people:
             print ("Do not input illegal number, please input again!")
 
 def ChooseLunch(People):
-    List1 = ['老广东','福荣祥烧腊','吉祥馄饨','原素Essence西餐','杨铭宇黄焖鸡米饭','东池便当','大阪牛肉饭','福客桂林米粉','杨国富麻辣烫','饭戒','文庙菜饭','羊肉泡馍']       
+    List1 = ['老广东','福荣祥烧腊','吉祥馄饨','原素Essence西餐','杨铭宇黄焖鸡米饭',
+             '东池便当','大阪牛肉饭','福客桂林米粉','杨国富麻辣烫','饭戒','文庙菜饭',
+             '羊肉泡馍','壹只蟹蟹煲饭','香酥脆皮鸡米饭','广东煲仔饭','喵七公','马来一号',
+             '京都牛肉盒子饭']       
     if 'M' in People:
         List1.remove('原素Essence西餐')
         List1.append('蜀道麻辣香锅')
