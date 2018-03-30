@@ -33,6 +33,19 @@ def ChooseLunch(People):
     random.shuffle(LunchList)
     Item = random.choice(LunchList)
     print (Item)
-    
+    print ("            ")
+    ChooseAgain()
+
+def ChooseAgain():
+    while 1:
+        CC = input("Choose again or not?(Y/N) ")
+        if CC.upper() == 'Y':
+            Main()
+            break
+        elif CC.upper() == 'N':
+            break
+        else:
+            print ("Do not input illegal character, please input again!")
+            
 if __name__ == '__main__':
     Main()
