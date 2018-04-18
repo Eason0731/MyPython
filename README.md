@@ -10,3 +10,13 @@ If no more issues after test on Python 3.6 that will retire Mypython repository 
 2. Development environment migrate from python 2.7 to 3.6 or more after Jan. 12, 2018  
 3. The legacy repository named MyPython will rename to LegacyPython2 as it won't be used and just as a backup repository.
 4. Repository named MyPython3 will rename to MyPython and it will become a main Python repository. I'll start to develop on current repository based on Python 3.6 or more.
+
+# Where to download browser drivers:
+1. Can find browser drivers download links on offical website: https://docs.seleniumhq.org/download/
+2. Also can find these files on my other repository named MySeleniumCase which accurate path is: https://github.com/John0731/MySeleniumCases/tree/master/Drivers
+I update these browser drivers to latest version by irregular.
+
+When run python selenium scripts with Firefox(gecko) driver that should copy geckodriver.exe to the path of Firefox browser (default path:C:\Program Files\Mozilla Firefox) or it will be ran failed!
+Please remember this!
+
+
