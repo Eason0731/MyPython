@@ -14,7 +14,8 @@ If no more issues after test on Python 3.6 that will retire Mypython repository 
 # Where to download browser drivers:
 1. Can find browser drivers download links on offical website: https://docs.seleniumhq.org/download/
 2. Also can find these files on my other repository named MySeleniumCase which accurate path is: https://github.com/John0731/MySeleniumCases/tree/master/Drivers
-I update these browser drivers to latest version by irregular.
+
+As I didn't upload browser drivers to current MyPython repository, but upload and update to the latest version on repository MySeleniumCase. So that you can find and download there.
 
 When run python selenium scripts with Firefox(gecko) driver that should copy geckodriver.exe to the path of Firefox browser (default path:C:\Program Files\Mozilla Firefox) or it will be ran failed!
 Please remember this!
