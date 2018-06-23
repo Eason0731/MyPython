@@ -22,7 +22,7 @@ class OperateConfirm(unittest.TestCase):
             self.assertEqual(Confirm.text,'这是一个confirm的弹出框') #使用断言assertEqual方法,判断获取文字是否符合预期的内容
             time.sleep(2)
             Confirm.dismiss() #.dismiss()点击Confirm框的取消以关闭
-            #Confirm.accept() #.accept()点击alert框的确认以关闭
+            #Confirm.accept() #.accept()点击Confirm框的确认以关闭
             time.sleep(2)
         except NoAlertPresentException as e:
             print (e)
