@@ -19,6 +19,7 @@ class CaptureScreenOnCurrentWindow(unittest.TestCase):
                 os.mkdir(ImageFolder)
             Images = driver.get_screenshot_as_file(os.path.join(ImageFolder,CurrentTime+'.png')) #利用方法get_screenshot_as_file()进行截图,并保存到指定的路径
             print (Images)
+
         except IOError as e:
             print (e)
             
