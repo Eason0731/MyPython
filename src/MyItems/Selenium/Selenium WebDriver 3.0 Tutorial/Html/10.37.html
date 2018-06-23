@@ -3,6 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>10.37</title>
+<script type="text/javascript">
+function display_alert(){
+alert("I am an alert box!")
+}
+</script>
 </head>
 
 <body>
@@ -15,7 +20,8 @@
 <br >
 
 </select>
-<input name="" type="checkbox" value="" > Do you like Formula One?</input>
+<input type="button" onclick="display_alert()" value="Display alert box" /> 
+<input id='check' type="checkbox" value="" > Do you like Formula One?</input>
 <br><br>
 <input name="" type="text" id="text" value="Good!" >TextBox</input>
 </body>
