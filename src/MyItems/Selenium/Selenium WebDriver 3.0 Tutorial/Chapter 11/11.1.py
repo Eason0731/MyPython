@@ -31,6 +31,21 @@ class UseJavaScriptToOperateElement(unittest.TestCase):
             time.sleep(2)
 
             self.assertEqual(Content+' - 国内版 Bing',driver.title,'该关键词未找到') #assertEqual断言方法，判断'德国2-1瑞典 - 国内版 Bing'有没有出现在当前网页获取的标题内，否则输出自定义的异常信息
+
+            driver.back() #返回bing主页，用另一个方法重新执行操作
+            time.sleep(2)
+
+            SearchBox = driver.find_element_by_id('sb_form_q')
+            SearchButton = driver.find_element_by_id('sb_form_go')
+
+            driver.execute_script("arguments[0].value=arguments[1]",SearchBox,Content) #使用execute_script()方法执行JavaScript语句,arguments[0],[1]指代需要传入的元素的参数变量(这里的[0]指代文本框,[1]指代需要搜索的指定内容),并执行指定的JavaScript语句,这里模拟文本框输入
+            time.sleep(2)
+
+            driver.execute_script("arguments[0].click()",SearchButton) #使用execute_script()方法执行JavaScript语句,arguments[0]指代需要传入的元素的参数变量(这里的[0]指代搜索按钮）,并执行指定的JavaScript语句,这里模拟点击搜索按钮
+            time.sleep(2)
+    
+            self.assertEqual(Content+' - 国内版 Bing',driver.title,'该关键词未找到') #assertEqual断言方法，判断'德国2-1瑞典 - 国内版 Bing'有没有出现在当前网页获取的标题内，否则输出自定义的异常信息
+                    
                         
         except TimeoutException as e:
             print (traceback.print_exc())
