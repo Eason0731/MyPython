@@ -57,7 +57,7 @@ def Main():
         else:
             print('Do not input incorrect date , please input again!')
     print ("========================================================")
-    print ("These two days are between " + str(Caltime(dt1,dt2)))
+    print ("These two days are between " + "".join(str(Caltime(dt1,dt2)).split(',')[:-1]) ) #"".join(Source.split('.')[:-1]) str(Caltime(dt1,dt2))
     print ("========================================================")
     Continue()
 
