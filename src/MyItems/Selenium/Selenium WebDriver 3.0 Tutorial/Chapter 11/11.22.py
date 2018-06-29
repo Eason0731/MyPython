@@ -22,6 +22,21 @@ class DownloadFileOnChrome(unittest.TestCase):
         DownloadFileLink.click()
         time.sleep(40)
         
+        PythonDownloadWebSite = "https://www.python.org/downloads/release/python-365/"
+        GeckoDriverDownloadWebSite = "https://github.com/mozilla/geckodriver/releases"
+
+        driver.get(PythonDownloadWebSite)
+        time.sleep(2) #等待2秒
+        DownloadPythonLink = driver.find_element_by_link_text('Windows x86-64 executable installer') #找到Python3.6.5版本的x86,x64通用版exe文件下载链接地址
+        DownloadPythonLink.click()
+        time.sleep(50)
+
+        driver.get(GeckoDriverDownloadWebSite)
+        time.sleep(2) #等待2秒
+        DownloadGeckoDriverLink = driver.find_element_by_xpath('//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/ul/li[5]/a/strong') #找到Firefox浏览器驱动文件geckodriver的0.21版本的x86系统的exe文件下载链接地址
+        DownloadGeckoDriverLink.click()
+        time.sleep(50)
+        
 
     def tearDown(self):
         self.driver.quit()
