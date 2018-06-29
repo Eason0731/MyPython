@@ -11,7 +11,7 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException #
 
 class TestHTML5VideoPlayer(unittest.TestCase):
     def setUp(self):
-        self.driver = Browser.Chrome()
+        self.driver = Browser.Firefox()
 
     def testTestHTML5VideoPlayer(self):
         driver = self.driver
