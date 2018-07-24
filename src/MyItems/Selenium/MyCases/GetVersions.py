@@ -3,7 +3,7 @@ import os,time,unittest,Browser
 class GetVersions(unittest.TestCase):
     def setUp(self):
         self.driver = Browser.Chrome()
-
+    
     def testGetChromeDriverVersion(self):
         driver = self.driver
         driver.get("https://sites.google.com/a/chromium.org/chromedriver/")
@@ -20,6 +20,15 @@ class GetVersions(unittest.TestCase):
 
         EdgeDriverVersion = driver.find_element_by_xpath('//*[@id="downloads"]/div/div[2]/ul/li[2]/a')
         print (EdgeDriverVersion.text)
+        time.sleep(3)
+    
+    def testGetGeckoDriverVersion(self):
+        driver = self.driver
+        driver.get("https://github.com/mozilla/geckodriver/releases")
+        time.sleep(3)
+
+        GeckoDriverVersion = driver.find_element_by_xpath('//*[@id="js-repo-pjax-container"]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/h1/a')
+        print ("Latest Gecko driver version is: " +GeckoDriverVersion.text)
         time.sleep(3)
     
     def tearDown(self):
