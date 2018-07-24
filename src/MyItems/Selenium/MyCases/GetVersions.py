@@ -40,6 +40,15 @@ class GetVersions(unittest.TestCase):
         print ("Latest Git version is: " + GitVersion.text)
         time.sleep(3)
     
+    def testGetJava8Version(self):
+        driver = self.driver
+        driver.get("http://www.oracle.com/technetwork/java/index.html")
+        time.sleep(3)
+
+        JavaVersion = driver.find_element_by_xpath('//*[@id="hm1w1"]/div[6]/ul/li[2]/a')
+        print ("Latest Java 8 version is: " + JavaVersion.text)
+        time.sleep(3)
+    
     def tearDown(self):
         self.driver.quit()
 
