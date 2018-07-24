@@ -49,6 +49,15 @@ class GetVersions(unittest.TestCase):
         print ("Latest Java 8 version is: " + JavaVersion.text)
         time.sleep(3)
     
+    def testGetPythonVersion(self):
+        driver = self.driver
+        driver.get("https://www.python.org/downloads/")
+        time.sleep(3)
+
+        PythonVersion = driver.find_element_by_xpath('//*[@id="content"]/div/section/div[1]/ol/li[1]/span[1]/a')
+        print (PythonVersion.text)
+        time.sleep(3)
+    
     def tearDown(self):
         self.driver.quit()
 
