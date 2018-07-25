@@ -58,6 +58,15 @@ class GetVersions(unittest.TestCase):
         print (PythonVersion.text)
         time.sleep(3)
     
+    def testGetSeleniumVersion(self):
+        driver = self.driver
+        driver.get("https://docs.seleniumhq.org/download/")
+        time.sleep(3)
+
+        SeleniumVersion = driver.find_element_by_xpath('//*[@id="mainContent"]/p[3]/a')
+        print ("Latest Selenium version is: " + SeleniumVersion.text)
+        time.sleep(3)
+    
     def tearDown(self):
         self.driver.quit()
 
