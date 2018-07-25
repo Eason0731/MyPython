@@ -19,7 +19,7 @@ class GetVersions(unittest.TestCase):
         time.sleep(3)
 
         EdgeDriverVersion = driver.find_element_by_xpath('//*[@id="downloads"]/div/div[2]/ul/li[2]/a')
-        print (EdgeDriverVersion.text)
+        print ("Latest Edge driver version is: " + EdgeDriverVersion.text)
         time.sleep(3)
     
     def testGetGeckoDriverVersion(self):
