@@ -21,8 +21,7 @@ Please Choose:""")
     
 def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig):
     IsBackup = '1'
-    BackupFolder = time.strftime("%Y%m%d",time.localtime())
-    BackupFolder = BackupFolder + "_Backup"
+    BackupFolder = time.strftime("%Y%m%d",time.localtime()) + "_Backup"
     BackupFolder = os.path.join("D:\\",BackupFolder)
     if os.path.exists(BackupFolder):
         shutil.rmtree(BackupFolder)
