@@ -1,7 +1,5 @@
 #coding=utf-8 
-import os
-import shutil
-import time
+import os,shutil,time
 
 def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig):
     Choose = input("""
