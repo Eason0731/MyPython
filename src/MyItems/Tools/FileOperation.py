@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-import os
-import re
-import shutil
-import time
-import sys
-import ViewPCInfos
+import os,re,shutil,time,sys,ViewPCInfos
 
 def MainFunction():
     Choose = input ("""
