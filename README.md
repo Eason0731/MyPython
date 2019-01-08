@@ -13,7 +13,7 @@ If no more issues after test on Python 3.6 that will retire Mypython repository 
 
 # Where to download browser drivers:
 1. Can find browser drivers download links on offical website: https://docs.seleniumhq.org/download/
-2. Also can find these files on my other repository named MySeleniumCase which accurate path is: https://github.com/John0731/MySeleniumCases/tree/master/Drivers
+2. Also can find these files on my other repository named MySeleniumCase which accurate path is: https://github.com/Eason0731/MySeleniumCases/tree/master/Drivers
 
 As I didn't upload browser drivers to current MyPython repository, but upload and update to the latest version on repository MySeleniumCase. So that you can find and download there.
 
