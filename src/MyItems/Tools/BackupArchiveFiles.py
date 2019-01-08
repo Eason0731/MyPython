@@ -1,7 +1,7 @@
 #coding=utf-8 
 import os,shutil,time
 
-def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig):
+def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig):
     Choose = input("""
 =========Welcome to Backup Archive Files===========
 1. Backup archive files before reinstall Widnows
@@ -11,13 +11,13 @@ Press AnyKey to Exit
 
 Please Choose:""")
     if Choose == '1':
-        Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig)
+        Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig)
     elif Choose == '2':
-        PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig)
+        PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig)
     else:
         exit(0)
     
-def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig):
+def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig):
     IsBackup = '1'
     BackupFolder = time.strftime("%Y%m%d",time.localtime()) + "_Backup"
     BackupFolder = os.path.join("D:\\",BackupFolder)
@@ -28,11 +28,11 @@ def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver
     os.makedirs(BackupFolder)
     print("Create backup folder: " + BackupFolder + " successfully!")
     print("===================================================")
-    MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig,BackupFolder,IsBackup)
+    MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,BackupFolder,IsBackup)
     print("===================================================")
     ExitOrNot()
         
-def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig,BackupFolder,IsBackup):
+def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,BackupFolder,IsBackup):
     print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()))
     Info = "'s archive files on this PC"
     if IsBackup == '1':
@@ -76,18 +76,6 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
             iTunes(sourceiTunes,BackupFolder,IsBackup)
         else:
             print("Won't backup -- Not found iTunes" + Info)
-        print("                                ")
-
-        if os.path.exists(sourceOutlook):
-            Outlook(sourceOutlook,BackupFolder,IsBackup)
-        else:
-            print("Won't backup -- Not found Outlook" + Info)
-        print("                                ")
-
-        if os.path.exists(sourceMicrosoftOutlook):
-            MicrosoftOutlook(sourceMicrosoftOutlook,BackupFolder,IsBackup)
-        else:
-            print("Won't backup -- Not found Microsoft Outlook" + Info)
         print("                                ")
 
         if os.path.exists(sourcePipConfig):
@@ -152,22 +140,6 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
                 iTunes(sourceiTunes,BackupFolder,IsBackup)
             else:
                 print("Won't put back -- Path of iTunes " + sourceiTunes + " had existed")
-            print("                                ")
-
-        if os.path.exists(os.path.join(BackupFolder,'Outlook 文件')):
-            i = i + 1   
-            if not os.path.exists(sourceOutlook):
-                Outlook(sourceOutlook,BackupFolder,IsBackup)
-            else:
-                print("Won't put back -- Path of Outlook " + sourceOutlook + " had existed")
-            print("                                ")
-
-        if os.path.exists(os.path.join(BackupFolder,'Microsoft','Outlook')):
-            i = i + 1   
-            if not os.path.exists(sourceMicrosoftOutlook):
-                MicrosoftOutlook(sourceMicrosoftOutlook,BackupFolder,IsBackup)
-            else:
-                print("Won't put back -- Path of Microsoft Outlook " + sourceMicrosoftOutlook + " had existed")
             print("                                ")
 
         if os.path.exists(os.path.join(BackupFolder,'pip')):
@@ -259,28 +231,6 @@ def iTunes(sourceiTunes,BackupFolder,IsBackup):
         shutil.move(os.path.join(BackupFolder,"iTunes"), sourceiTunes)
         print("Put back iTunes successfully!")
 
-def Outlook(sourceOutlook,BackupFolder,IsBackup):
-    if IsBackup == '1':
-        BackupFolder = os.path.join(BackupFolder,'Outlook 文件')
-        os.makedirs(BackupFolder)
-        copyFiles(sourceOutlook,BackupFolder)
-        print("Backup Outlook successfully! --- %.2f" % GetSize(sourceOutlook), "MB")
-    else:
-        shutil.move(os.path.join(BackupFolder,"Outlook 文件"), sourceOutlook)
-        print("Put back Outlook successfully!")
-
-def MicrosoftOutlook(sourceMicrosoftOutlook,BackupFolder,IsBackup):
-    if IsBackup == '1':
-        BackupFolder = os.path.join(BackupFolder,'Microsoft','Outlook')
-        os.makedirs(BackupFolder)
-        copyFiles(sourceMicrosoftOutlook,BackupFolder)
-        print("Backup Microsoft Outlook successfully! --- %.2f" % GetSize(sourceMicrosoftOutlook), "MB")
-    else:
-        shutil.move(os.path.join(BackupFolder,"Microsoft",'Outlook'), sourceMicrosoftOutlook)
-        if not os.listdir(os.path.join(BackupFolder,"Microsoft")):
-            shutil.rmtree(os.path.join(BackupFolder,"Microsoft"))
-        print("Put back Microsoft Outlook successfully!")
-
 def PipConfig(sourcePipConfig,BackupFolder,IsBackup):
     if IsBackup == '1':
         BackupFolder = os.path.join(BackupFolder,'pip')
@@ -292,13 +242,13 @@ def PipConfig(sourcePipConfig,BackupFolder,IsBackup):
         print("Put back Pip config file successfully!")
         
         
-def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig):
+def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig):
     BackupFolder = input ("Please input backup folder path:")
     print("===================================================")
     if BackupFolder.strip():
         if os.path.exists(BackupFolder):
             IsBackup = '2'
-            MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig,BackupFolder,IsBackup)
+            MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,BackupFolder,IsBackup)
         else:
             print(BackupFolder + " is not exists!")
     else:
@@ -310,7 +260,7 @@ def ExitOrNot():
     while(True):
         cc = input("Back to main menu? (Y/N)")
         if cc.lower() == 'y':
-            MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig)
+            MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig)
             break
         elif cc.lower() == 'n':
             exit(0)
@@ -362,8 +312,6 @@ if __name__ == "__main__":
     sourceBusDriver = os.path.join(os.environ['USERPROFILE'],'Documents','Bus Driver')
     sourceWeChat = os.path.join(os.environ['USERPROFILE'],'Documents','WeChat Files')
     sourceiTunes = os.path.join(os.environ['USERPROFILE'],'Music','iTunes')
-    sourceOutlook = os.path.join(os.environ['USERPROFILE'],'Documents','Outlook 文件')
-    sourceMicrosoftOutlook = os.path.join(os.environ['localappdata'],'Microsoft','Outlook')
     sourcePipConfig = os.path.join(os.environ['USERPROFILE'],'pip')
     
-    MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourceOutlook,sourceMicrosoftOutlook,sourcePipConfig)
+    MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig)
