@@ -201,7 +201,7 @@ def PES(sourcePES,BackupFolder,IsBackup):
 
 def TDU(sourceTDU,BackupFolder,IsBackup):
     if IsBackup == '1':
-        SmartHint(sourcePES)
+        SmartHint(sourceTDU)
         BackupFolder = os.path.join(BackupFolder,'Test Drive Unlimited')
         os.makedirs(BackupFolder)  
         copyFiles(sourceTDU,BackupFolder)
