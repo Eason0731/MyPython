@@ -177,91 +177,109 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
 
 def My2K(source2Kfolder,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(source2Kfolder)
         BackupFolder = os.path.join(BackupFolder,'2K Sports')
         os.makedirs(BackupFolder)  
         copyFiles(source2Kfolder,BackupFolder)
         print("Backup 2K successfully! --- %.2f" % GetSize(source2Kfolder), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"2K Sports"))
         shutil.move(os.path.join(BackupFolder,"2K Sports"), source2Kfolder)
         print("Put back 2K successfully!")
       
 def PES(sourcePES,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourcePES)
         BackupFolder = os.path.join(BackupFolder,'KONAMI')
         os.makedirs(BackupFolder)
         copyFiles(sourcePES,BackupFolder)
         print("Backup Pro Evolution Soccer successfully! --- %.2f" % GetSize(sourcePES), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"KONAMI"))
         shutil.move(os.path.join(BackupFolder,"KONAMI"), sourcePES)
         print("Put back Pro Evolution Soccer successfully!")
 
 def TDU(sourceTDU,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourcePES)
         BackupFolder = os.path.join(BackupFolder,'Test Drive Unlimited')
         os.makedirs(BackupFolder)  
         copyFiles(sourceTDU,BackupFolder)
         print("Backup Test Drive Unlimited successfully! --- %.2f" % GetSize(sourceTDU), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"Test Drive Unlimited"))
         shutil.move(os.path.join(BackupFolder,"Test Drive Unlimited"), sourceTDU)
         print("Put back Test Drive Unlimited successfully!")
     
 def TencentFiles(sourceTencentFiles,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourceTencentFiles)
         BackupFolder = os.path.join(BackupFolder,'Tencent Files')
         os.makedirs(BackupFolder)
         copyFiles(sourceTencentFiles,BackupFolder)
         print("Backup Tencent Files successfully! --- %.2f" % GetSize(sourceTencentFiles), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"Tencent Files"))
         shutil.move(os.path.join(BackupFolder,"Tencent Files"), sourceTencentFiles)
         print("Put back Tencent Files successfully!")
 
 def BusDriver(sourceBusDriver,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourceBusDriver)
         BackupFolder = os.path.join(BackupFolder,'Bus Driver')
         os.makedirs(BackupFolder)
         copyFiles(sourceBusDriver,BackupFolder)
         print("Backup Bus Driver successfully! --- %.2f" % GetSize(sourceBusDriver), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"Bus Driver"))
         shutil.move(os.path.join(BackupFolder,"Bus Driver"), sourceBusDriver)
         print("Put back Bus Driver successfully!")
 
 def WeChatFiles(sourceWeChat,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourceWeChat)
         BackupFolder = os.path.join(BackupFolder,'WeChat Files')
         os.makedirs(BackupFolder)
         copyFiles(sourceWeChat,BackupFolder)
         print("Backup WeChat Files successfully! --- %.2f" % GetSize(sourceWeChat), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"WeChat Files"))
         shutil.move(os.path.join(BackupFolder,"WeChat Files"), sourceWeChat)
         print("Put back WeChat Files successfully!")
 
 def iTunes(sourceiTunes,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourceiTunes)
         BackupFolder = os.path.join(BackupFolder,'iTunes')
         os.makedirs(BackupFolder)
         copyFiles(sourceiTunes,BackupFolder)
         print("Backup iTunes successfully! --- %.2f" % GetSize(sourceiTunes), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,"iTunes"))
         shutil.move(os.path.join(BackupFolder,"iTunes"), sourceiTunes)
         print("Put back iTunes successfully!")
 
 def PipConfig(sourcePipConfig,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourcePipConfig)
         BackupFolder = os.path.join(BackupFolder,'pip')
         os.makedirs(BackupFolder)
         copyFiles(sourcePipConfig,BackupFolder)
         print("Backup Pip config file successfully! --- %.2f" % GetSize(sourcePipConfig), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,'pip'))
         shutil.move(os.path.join(BackupFolder,'pip'), sourcePipConfig)
         print("Put back Pip config file successfully!")
 
 def ChineseParents(sourceChineseParents,BackupFolder,IsBackup):
     if IsBackup == '1':
+        SmartHint(sourceChineseParents)
         BackupFolder = os.path.join(BackupFolder,'中国式家长')
         os.makedirs(BackupFolder)
         copyFiles(sourceChineseParents,BackupFolder)
         print("Backup Chinese Parents successfully! --- %.2f" % GetSize(sourceChineseParents), "MB")
     else:
+        SmartHint(os.path.join(BackupFolder,'中国式家长'))
         shutil.move(os.path.join(BackupFolder,'中国式家长'), sourceChineseParents)
         print("Put back Chinese Parents successfully!")
         
@@ -278,6 +296,11 @@ def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
         print("Please do not input the empty infos")
     print("===================================================")
     ExitOrNot()
+
+def SmartHint(Source):
+    if GetSize(Source) > 100.0:
+        print ("Processing the large file now and please wait a moment...")
+    
 
 def ExitOrNot():
     while(True):
