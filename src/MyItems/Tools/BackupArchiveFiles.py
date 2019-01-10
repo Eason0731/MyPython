@@ -178,13 +178,11 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
 def My2K(source2Kfolder,BackupFolder,IsBackup):
     SmartHint(source2Kfolder,os.path.join(BackupFolder,"2K Sports"))
     if IsBackup == '1':
-        #SmartHint(source2Kfolder)
         BackupFolder = os.path.join(BackupFolder,'2K Sports')
         os.makedirs(BackupFolder)  
         copyFiles(source2Kfolder,BackupFolder)
         print("Backup 2K successfully! --- %.2f" % GetSize(source2Kfolder), "MB")
     else:
-        #SmartHint(os.path.join(BackupFolder,"2K Sports"))
         shutil.move(os.path.join(BackupFolder,"2K Sports"), source2Kfolder)
         print("Put back 2K successfully!")
       
