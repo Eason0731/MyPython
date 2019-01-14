@@ -3,7 +3,7 @@ import getpass
 import socket
 import uuid
 import platform
-import re,urllib.request,urllib.error,urllib.parse
+import re,urllib.request,urllib.error,urllib.parse,requests
 from subprocess import Popen, PIPE
 import FileOperation
 
@@ -31,11 +31,11 @@ def ViewPCInfos():
 def GetPublicNetworkIP():
     import re,urllib.request,urllib.error,urllib.parse
     try:
-        ipURL = urllib.request.urlopen('http://ip138.com/ip2city.asp').read() #'http://ip138.com/ip2city.asp' This site is available to search IP
-        publicip = re.search('\d+\.\d+\.\d+\.\d+',str(ipURL)).group(0) #ipURL should be changed to string type on python3
+        ipURL = requests.get("http://txt.go.sohu.com/ip/soip").text #'http://txt.go.sohu.com/ip/soip' This site is available to search IP
+        publicip = re.findall(r'\d+.\d+.\d+.\d+',ipURL) #use findall regular to find public network ip
     except Exception as e:
         publicip = str(e)
-    return publicip
+    return publicip[0]
 
 def os_version():
     import platform
