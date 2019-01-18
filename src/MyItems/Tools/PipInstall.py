@@ -20,18 +20,18 @@ def PipInstall():
     ,'WMI']
     print ("==========================================================")
     print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()))
-    for i in List:
+    for Package in List:
         InstallList = os.popen('pip list')
         UpdateList = os.popen('pip list --outdate')
-        if i not in InstallList.read():
-            os.system('pip install ' + i)
+        if Package not in InstallList.read():
+            os.system('pip install ' + Package)
         else:
-            print (i + ' has installed')
+            print (Package + ' has installed')
         print ("                       ")
-        if i in UpdateList.read():
-            os.system('pip install '+ i + ' -U')
+        if Package in UpdateList.read():
+            os.system('pip install '+ Package + ' -U')
         else:
-            print ('No need to update ' + i)
+            print ('No need to update ' + Package)
         print ("==========================================================")
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
     print ("==========================================================")
