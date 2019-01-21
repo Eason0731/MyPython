@@ -1,7 +1,7 @@
 #coding=utf-8 
 import os,shutil,time
 
-def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents):
+def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans):
     Choose = input("""
 =========Welcome to Backup Archive Files===========
 1. Backup archive files before reinstall Widnows
@@ -11,13 +11,13 @@ Press AnyKey to Exit
 
 Please Choose:""")
     if Choose == '1':
-        Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents)
+        Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans)
     elif Choose == '2':
-        PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents)
+        PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans)
     else:
         exit(0)
     
-def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents):
+def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans):
     IsBackup = '1'
     BackupFolder = time.strftime("%Y%m%d",time.localtime()) + "_Backup"
     BackupFolder = os.path.join("D:\\",BackupFolder)
@@ -28,11 +28,11 @@ def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver
     os.makedirs(BackupFolder)
     print("Create backup folder: " + BackupFolder + " successfully!")
     print("===================================================")
-    MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,BackupFolder,IsBackup)
+    MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,BackupFolder,IsBackup)
     print("===================================================")
     ExitOrNot()
         
-def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,BackupFolder,IsBackup):
+def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,BackupFolder,IsBackup):
     print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()))
     Info = "'s archive files on this PC"
     if IsBackup == '1':
@@ -88,6 +88,12 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
             ChineseParents(sourceChineseParents,BackupFolder,IsBackup)
         else:
             print("Won't backup -- Not found Chinese Parents" + Info)
+        print("                                ")
+
+        if os.path.exists(sourceTennisTitans):
+            TennisTitans(sourceTennisTitans,BackupFolder,IsBackup)
+        else:
+            print("Won't backup -- Not found Tennis Titans" + Info)
         print("                                ")
         
     else:
@@ -162,6 +168,14 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
                 ChineseParents(sourceChineseParents,BackupFolder,IsBackup)
             else:
                 print("Won't put back -- Path of Chinese Parents " + sourceChineseParents + " had existed")
+            print("                                ")
+
+        if os.path.exists(os.path.join(BackupFolder,'Tennis Titans')):
+            i = i + 1   
+            if not os.path.exists(sourceTennisTitans):
+                TennisTitans(sourceTennisTitans,BackupFolder,IsBackup)
+            else:
+                print("Won't put back -- Path of Tennis Titans " + sourceTennisTitans + " had existed")
             print("                                ")
         
         if i == 0:
@@ -273,14 +287,25 @@ def ChineseParents(sourceChineseParents,BackupFolder,IsBackup):
     else:
         shutil.move(os.path.join(BackupFolder,'中国式家长'), sourceChineseParents)
         print("Put back Chinese Parents successfully!")
+
+def TennisTitans(sourceChineseParents,BackupFolder,IsBackup):
+    SmartHint(sourceTennisTitans,os.path.join(BackupFolder,'Tennis Titans'))
+    if IsBackup == '1':
+        BackupFolder = os.path.join(BackupFolder,'Tennis Titans')
+        os.makedirs(BackupFolder)
+        copyFiles(sourceTennisTitans,BackupFolder)
+        print("Backup Tennis Titans successfully! --- %.2f" % GetSize(sourceChineseParents), "MB")
+    else:
+        shutil.move(os.path.join(BackupFolder,'Tennis Titans'), sourceTennisTitans)
+        print("Put back Tennis Titans successfully!")
         
-def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents):
+def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans):
     BackupFolder = input ("Please input backup folder path:")
     print("===================================================")
     if BackupFolder.strip():
         if os.path.exists(BackupFolder):
             IsBackup = '2'
-            MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,BackupFolder,IsBackup)
+            MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,BackupFolder,IsBackup)
         else:
             print(BackupFolder + " is not exists!")
     else:
@@ -297,7 +322,7 @@ def ExitOrNot():
     while(True):
         cc = input("Back to main menu? (Y/N)")
         if cc.lower() == 'y':
-            MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents)
+            MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans)
             break
         elif cc.lower() == 'n':
             exit(0)
@@ -351,5 +376,6 @@ if __name__ == "__main__":
     sourceiTunes = os.path.join(os.environ['USERPROFILE'],'Music','iTunes')
     sourcePipConfig = os.path.join(os.environ['USERPROFILE'],'pip')
     sourceChineseParents = os.path.join(os.environ['UserProfile'],'AppData','LocalLow','moyuwan','中国式家长')
+    sourceTennisTitans = os.path.join(os.environ['AppData'],'Macromedia','Director MX 2004','Tennis Titans')
     
-    MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents)
+    MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans)
