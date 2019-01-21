@@ -288,13 +288,13 @@ def ChineseParents(sourceChineseParents,BackupFolder,IsBackup):
         shutil.move(os.path.join(BackupFolder,'中国式家长'), sourceChineseParents)
         print("Put back Chinese Parents successfully!")
 
-def TennisTitans(sourceChineseParents,BackupFolder,IsBackup):
+def TennisTitans(sourceTennisTitans,BackupFolder,IsBackup):
     SmartHint(sourceTennisTitans,os.path.join(BackupFolder,'Tennis Titans'))
     if IsBackup == '1':
         BackupFolder = os.path.join(BackupFolder,'Tennis Titans')
         os.makedirs(BackupFolder)
         copyFiles(sourceTennisTitans,BackupFolder)
-        print("Backup Tennis Titans successfully! --- %.2f" % GetSize(sourceChineseParents), "MB")
+        print("Backup Tennis Titans successfully! --- %.2f" % GetSize(sourceTennisTitans), "MB")
     else:
         shutil.move(os.path.join(BackupFolder,'Tennis Titans'), sourceTennisTitans)
         print("Put back Tennis Titans successfully!")
