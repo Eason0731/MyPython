@@ -19,21 +19,25 @@ Choose number of people:
             print ("Do not input illegal number, please input again!")
 
 def ChooseLunch(People):
-    LunchList = ['老广东','福荣祥烧腊','吉祥馄饨','原素Essence西餐','杨铭宇黄焖鸡米饭',
-             '东池便当','大阪牛肉饭','福客桂林米粉','杨国富麻辣烫','文庙菜饭',
+    Week = ['Monday','Tuesday','Wednesday','Thursday','Friday']
+    
+    if 'S' in People:
+        LunchList = ['老广东排骨年糕','盒饭','福荣祥烧腊','吉祥馄饨','原素Essence西餐','杨铭宇黄焖鸡米饭',
+             '东池便当','大阪牛肉饭','福客桂林米粉','麻辣烫','文庙菜饭',
              '羊肉泡馍','壹只蟹蟹煲饭','香酥脆皮鸡米饭','广东煲仔饭','喵七公','马来一号',
-             '京都牛肉盒子饭','CUTiE咖喱屋','梁小猴港式铁板炒饭','隋炀帝炒饭']       
+             '京都牛肉盒子饭','CUTiE咖喱屋','梁小猴港式铁板炒饭','隋炀帝炒饭']
+    
     if 'M' in People:
-        LunchList.remove('原素Essence西餐')
-        LunchList.append('蜀道麻辣香锅')
-        LunchList.append('小四川')
-        LunchList.append('美味小厨')
-
-    print ("We decided that today's lunch is .....")
-    random.shuffle(LunchList)
-    Item = random.choice(LunchList)
-    print (Item)
-    print ("            ")
+        LunchList = ['小食堂','吉祥馄饨','樱桃菜饭骨头汤','小饭店','鹅庄','麦当劳','五芳斋']  
+        
+    for Day in Week:
+        print ("We decided "+ Day +" 's lunch is .....")
+        random.shuffle(LunchList)
+        Item = random.choice(LunchList)
+        print (Item)
+        LunchList.remove(Item)
+        print ("            ")
+    
     ChooseAgain()
 
 def ChooseAgain():
