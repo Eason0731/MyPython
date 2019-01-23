@@ -25,6 +25,9 @@ def PipInstall():
     
     Installed = 0
     InstalledList = []
+
+    NoUpdated = 0
+    NoUpdatedList = []
     
     Updated = 0
     UpdatedList = []
@@ -47,6 +50,8 @@ def PipInstall():
             UpdatedList.append(Package)
         else:
             print ('No need to update ' + Package)
+            NoUpdated = NoUpdated + 1
+            NoUpdatedList.append(Package)
         
         print ("==========================================================")
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
@@ -67,11 +72,11 @@ def PipInstall():
     print (os.popen('pip list').read())
     print ("==========================================================")
     if Updated == 0:
-        if Installed == 1:
+        if NoUpdated == 1:
             pkg = 'package was'
         else:
             pkg = 'packages were'
-        print ("{0} ({1}) ".format(str(Installed),','.join(InstalledList)) + pkg + " installed on this PC are the latest version!")
+        print ("{0} ({1}) ".format(str(NoUpdated),','.join(NoUpdatedList)) + pkg + " installed on this PC are the latest version!")
     else:
         if Updated == 1:
             pkg = 'package has'
