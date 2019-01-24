@@ -184,7 +184,7 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
         if not os.listdir(BackupFolder):
             shutil.rmtree(BackupFolder)
             if not os.path.exists(BackupFolder):
-                print("All archive files has been put back")
+                print("All archive files have been put back")
                 print("Backup folder " + BackupFolder + " has been deleted successfully!")
                 print("                                ")
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
