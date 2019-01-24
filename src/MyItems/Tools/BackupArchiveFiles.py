@@ -181,12 +181,7 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
         if i == 0:
             print(BackupFolder + " does not contain any releated backup files, this may not a correct backup folder")
 
-        if not os.listdir(BackupFolder):
-            shutil.rmtree(BackupFolder)
-            if not os.path.exists(BackupFolder):
-                print("All archive files have been put back")
-                print("Backup folder " + BackupFolder + " has been deleted successfully!")
-                print("                                ")
+    DeleteBackupFolder(BackupFolder,IsBackup)
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
 
 def My2K(source2Kfolder,BackupFolder,IsBackup):
@@ -317,6 +312,16 @@ def SmartHint(Source,Backup):
     if GetSize(Source) > 100.0 or GetSize(Backup) > 100.0:
         print ("Processing the large file now and please wait a moment...")
     
+def DeleteBackupFolder(BackupFolder,IsBackup):
+    if not os.listdir(BackupFolder):
+        shutil.rmtree(BackupFolder)
+        if not os.path.exists(BackupFolder):
+            if IsBackup == '1':
+                print ("Empty archive files backup folder " + BackupFolder + " has been deleted successfully!")
+            else:
+                print("All archive files have been put back")
+                print("Backup folder " + BackupFolder + " has been deleted successfully!")
+                print("                                ")
 
 def ExitOrNot():
     while(True):
