@@ -33,7 +33,7 @@ def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver
     ExitOrNot()
         
 def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,BackupFolder,IsBackup):
-    print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()))
+    print(time.strftime("Start time :%Y-%m-%d %X",time.localtime())+ "\n")
     Info = "'s archive files on this PC"
     if IsBackup == '1':
         if os.path.exists(source2Kfolder):
@@ -295,16 +295,14 @@ def TennisTitans(sourceTennisTitans,BackupFolder,IsBackup):
         print("Put back Tennis Titans successfully!")
         
 def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans):
-    BackupFolder = input ("Please input backup folder path:")
+    BackupFolder = SearchBackupFolder()
     print("===================================================")
-    if BackupFolder.strip():
-        if os.path.exists(BackupFolder):
-            IsBackup = '2'
-            MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,BackupFolder,IsBackup)
-        else:
-            print(BackupFolder + " is not exists!")
+    if 'Not Exists Path' in BackupFolder:
+        print("BackupFolder is not exixts and won't put back!")
     else:
-        print("Please do not input the empty infos")
+        print("Backup folder is : " + BackupFolder + " \n")
+        IsBackup = '2'
+        MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,BackupFolder,IsBackup)
     print("===================================================")
     ExitOrNot()
 
@@ -322,6 +320,19 @@ def DeleteBackupFolder(BackupFolder,IsBackup):
                 print("All archive files have been put back")
                 print("Backup folder " + BackupFolder + " has been deleted successfully!")
                 print("                                ")
+
+def SearchBackupFolder():
+    k = 0
+    Dir = 'D:\\'
+    Name = '_Backup'
+    BackupFolder = 'Not Exists Path'
+    for root,dirs,filenames in os.walk(Dir):
+        for myFolder in dirs:
+            if Name.lower() in myFolder.lower():
+                k = k + 1
+                BackupFolder = os.path.join(root,myFolder)
+
+    return BackupFolder
 
 def ExitOrNot():
     while(True):
