@@ -97,16 +97,14 @@ def MicrosoftOutlook(sourceMicrosoftOutlook,BackupFolder,IsBackup):
          print("Put back Microsoft Outlook successfully!")
         
 def PutBack(sourceOutlook,sourceMicrosoftOutlook):
-    BackupFolder = input ("Please input backup folder path:")
+    BackupFolder = "BackupMyOutlook"
+    BackupFolder = os.path.join("D:\\",BackupFolder)
     print("===================================================")
-    if BackupFolder.strip():
-        if os.path.exists(BackupFolder):
-            IsBackup = '2'
-            MyFiles(sourceOutlook,sourceMicrosoftOutlook,BackupFolder,IsBackup)
-        else:
-            print(BackupFolder + " is not exists!")
+    if os.path.exists(BackupFolder):
+        IsBackup = '2'
+        MyFiles(sourceOutlook,sourceMicrosoftOutlook,BackupFolder,IsBackup)
     else:
-        print("Please do not input the empty infos")
+        print(BackupFolder + " is not exists!")
     print("===================================================")
     ExitOrNot()
 
