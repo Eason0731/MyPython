@@ -35,7 +35,7 @@ def Backup(sourceOutlook,sourceMicrosoftOutlook):
     ExitOrNot()
         
 def MyFiles(sourceOutlook,sourceMicrosoftOutlook,BackupFolder,IsBackup):
-    print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()))
+    print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()) +"\n")
     Info = "'s archive files on this PC"
     if IsBackup == '1':
         if os.path.exists(sourceOutlook):
@@ -69,7 +69,8 @@ def MyFiles(sourceOutlook,sourceMicrosoftOutlook,BackupFolder,IsBackup):
             print("                                ")
 
         if i == 0:
-            print(BackupFolder + " does not contain any releated backup files, this may not a correct backup folder")
+            IsBackup = '1'
+            print(BackupFolder + " does not contain any releated backup files, this may not a correct backup folder \n")
         
     DeleteBackupFolder(BackupFolder,IsBackup)
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
@@ -113,11 +114,10 @@ def DeleteBackupFolder(BackupFolder,IsBackup):
         shutil.rmtree(BackupFolder)
         if not os.path.exists(BackupFolder):
             if IsBackup == '1':
-                print ("Empty archive files backup folder " + BackupFolder + " has been deleted successfully!")
+                print ("Empty archive files backup folder " + BackupFolder + " has been deleted successfully! \n")
             else:
                 print("All archive files have been put back")
-                print("Backup folder " + BackupFolder + " has been deleted successfully!")
-                print("                                ")
+                print("Backup folder " + BackupFolder + " has been deleted successfully! \n")
 
 def ExitOrNot():
     while(True):
