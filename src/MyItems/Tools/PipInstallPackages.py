@@ -1,7 +1,7 @@
 import os,time
 
 def PipInstall():
-    List = ['certifi'
+    PackagesList = ['certifi'
     ,'chardet'
     ,'ddt'
     ,'Django'
@@ -32,26 +32,26 @@ def PipInstall():
     Updated = 0
     UpdatedList = []
     
-    for Package in List:
+    for myPackage in PackagesList:
         InstallPackagesList = os.popen('pip list')
         UpdatePackagesList = os.popen('pip list --outdate')
-        if Package not in InstallPackagesList.read():
-            os.system('pip install ' + Package)
+        if myPackage not in InstallPackagesList.read():
+            os.system('pip install ' + myPackage)
             Install = Install + 1
-            InstallList.append(Package)
+            InstallList.append(myPackage)
         else:
-            print (Package + ' has installed')
+            print (myPackage + ' has installed')
             Installed = Installed + 1
-            InstalledList.append(Package)
+            InstalledList.append(myPackage)
         print ("                       ")
-        if Package in UpdatePackagesList.read():
-            os.system('pip install '+ Package + ' -U')
+        if myPackage in UpdatePackagesList.read():
+            os.system('pip install '+ myPackage + ' -U')
             Updated = Updated + 1
-            UpdatedList.append(Package)
+            UpdatedList.append(myPackage)
         else:
-            print ('No need to update ' + Package)
+            print ('No need to update ' + myPackage)
             NoUpdated = NoUpdated + 1
-            NoUpdatedList.append(Package)
+            NoUpdatedList.append(myPackage)
         
         print ("==========================================================")
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
@@ -67,7 +67,7 @@ def PipInstall():
             pkg = 'package has'
         else:
             pkg = 'packages have'
-        print ("{0} ({1}) ".format(str(Install),','.join(InstallList)) + pkg +" insalled on this PC successfully!")
+        print ("{0} ({1}) ".format(str(Install),','.join(InstallList)) + pkg +" insalled successfully on this PC!")
     print ("                                                          ")  
     print (os.popen('pip list').read())
     print ("==========================================================")
@@ -82,7 +82,7 @@ def PipInstall():
             pkg = 'package has'
         else:
             pkg = 'packages have'
-        print ("{0} ({1}) ".format(str(Updated),','.join(UpdatedList)) + pkg + " updated on this PC successfully!")
+        print ("{0} ({1}) ".format(str(Updated),','.join(UpdatedList)) + pkg + " updated successfully on this PC!")
     print (os.popen('pip list --outdate').read())
     print ("==========================================================")
 
