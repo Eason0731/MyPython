@@ -16,6 +16,7 @@ def PipInstall():
     ,'requests'
     ,'selenium'
     ,'setuptools'
+    ,'unrar'
     ,'urllib3'
     ,'WMI']
     print ("==========================================================")
