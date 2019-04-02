@@ -20,4 +20,8 @@ As I didn't upload browser drivers to current MyPython repository, but upload an
 When run python selenium scripts with Firefox(gecko) driver that should copy geckodriver.exe to the path of Firefox browser (default path:C:\Program Files\Mozilla Firefox) or it will be ran failed!
 Please remember this!
 
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu"></a>
 
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE_CN)
