@@ -7,6 +7,7 @@ def PipInstall():
     ,'Django'
     ,'idna'
     ,'numpy'
+    ,'Pillow'
     ,'pip'
     ,'progressbar'
     ,'pypiwin32'
