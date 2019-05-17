@@ -17,6 +17,7 @@ def PipInstall():
     ,'requests'
     ,'selenium'
     ,'setuptools'
+    ,'sqlparse'
     ,'unrar'
     ,'urllib3'
     ,'WMI']
