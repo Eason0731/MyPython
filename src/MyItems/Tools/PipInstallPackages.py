@@ -15,6 +15,7 @@ def PipInstall():
     ,'pywin32'
     ,'rarfile'
     ,'requests'
+    ,'robotframework'
     ,'selenium'
     ,'setuptools'
     ,'sqlparse'
