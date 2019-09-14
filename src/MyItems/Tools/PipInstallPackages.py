@@ -23,7 +23,7 @@ def PipInstall():
     ,'urllib3'
     ,'WMI']
     print ("==========================================================")
-    print(time.strftime("Start time :%Y-%m-%d %X",time.localtime()))
+    StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
     Install = 0
     InstallList = []
     
@@ -58,8 +58,6 @@ def PipInstall():
             NoUpdatedList.append(myPackage)
         
         print ("==========================================================")
-    print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
-    print ("==========================================================")
     if Install == 0:
         if Installed == 1:
             pkg = 'package was'
@@ -88,6 +86,9 @@ def PipInstall():
             pkg = 'packages have'
         print ("{0} ({1}) ".format(str(Updated),','.join(UpdatedList)) + pkg + " updated successfully on this PC!")
     print (os.popen('pip list --outdate').read())
+    print ("==========================================================")
+    print ("Start time :" + StartTime)
+    print (time.strftime("End time :%Y-%m-%d %X",time.localtime()))
     print ("==========================================================")
 
 if __name__ == '__main__':
