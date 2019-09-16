@@ -39,6 +39,8 @@ def SetIPandDNS(IP,Yanma,Gateway,DNSServers):
     os.system('IPCONFIG/FLUSHDNS')
 
 if __name__ == '__main__':
-    SetIPandDNS(['10.6.228.10'],['255.255.255.128'],['10.6.228.1'],['10.5.22.67'])
-    #SetIPandDNS(['10.6.246.85'],['255.0.0.0'],['10.6.246.1'],['10.5.22.66','10.5.22.67'])
+    SetIPandDNS(['10.6.246.23'],['255.255.255.0'],['10.6.246.1'],['10.5.22.67']) # Ip and Subnetmask on room 506
+    #SetIPandDNS(['10.6.246.110'],['255.255.255.192'],['10.6.246.65'],['10.5.22.66','10.5.22.67']) , Ip and Subnetmask on room 508
+    #SetIPandDNS(['10.6.228.10'],['255.255.255.128'],['10.6.228.1'],['10.5.22.67']) , Ip and Subnetmask on room 607
+    #SetIPandDNS(['10.6.246.85'],['255.0.0.0'],['10.6.246.1'],['10.5.22.66','10.5.22.67']) , Ip and Subnetmask on room 411
     
