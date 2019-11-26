@@ -200,136 +200,114 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
     print(time.strftime("End time :%Y-%m-%d %X",time.localtime()))
 
 def My2K(source2Kfolder,BackupFolder,IsBackup):
+    SmartHint(source2Kfolder,os.path.join(BackupFolder,"2K Sports"),'2K',IsBackup)
     if IsBackup == '1':
-        SmartHint(source2Kfolder,'2K')
         BackupFolder = os.path.join(BackupFolder,'2K Sports')
         os.makedirs(BackupFolder)  
         copyFiles(source2Kfolder,BackupFolder)
-        GetSize(source2Kfolder,'2K')
     else:
-        SmartHint(os.path.join(BackupFolder,"2K Sports"),'2K')
         shutil.move(os.path.join(BackupFolder,"2K Sports"), source2Kfolder)
-        print("Put back 2K successfully!")
+    GetSize(source2Kfolder,'2K',IsBackup)
       
 def PES(sourcePES,BackupFolder,IsBackup):
+    SmartHint(sourcePES,os.path.join(BackupFolder,"KONAMI"),'Pro Evolution Soccer',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourcePES,'Pro Evolution Soccer')
         BackupFolder = os.path.join(BackupFolder,'KONAMI')
         os.makedirs(BackupFolder)
         copyFiles(sourcePES,BackupFolder)
-        GetSize(sourcePES,'Pro Evolution Soccer')
     else:
-        SmartHint(os.path.join(BackupFolder,"KONAMI"),'Pro Evolution Soccer')
         shutil.move(os.path.join(BackupFolder,"KONAMI"), sourcePES)
-        print("Put back Pro Evolution Soccer successfully!")
+    GetSize(sourcePES,'Pro Evolution Soccer',IsBackup)
 
 def TDU(sourceTDU,BackupFolder,IsBackup):
+    SmartHint(sourceTDU,os.path.join(BackupFolder,"Test Drive Unlimited"),'Test Drive Unlimited',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceTDU,'Test Drive Unlimited')
         BackupFolder = os.path.join(BackupFolder,'Test Drive Unlimited')
         os.makedirs(BackupFolder)  
         copyFiles(sourceTDU,BackupFolder)
-        GetSize(sourceTDU,'Test Drive Unlimited')
     else:
-        SmartHint(os.path.join(BackupFolder,"Test Drive Unlimited"),'Test Drive Unlimited')
         shutil.move(os.path.join(BackupFolder,"Test Drive Unlimited"), sourceTDU)
-        print("Put back Test Drive Unlimited successfully!")
+    GetSize(sourceTDU,'Test Drive Unlimited',IsBackup)
     
 def TencentFiles(sourceTencentFiles,BackupFolder,IsBackup):
+    SmartHint(sourceTencentFiles,os.path.join(BackupFolder,"Tencent Files"),'Tencent Files',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceTencentFiles,'Tencent Files')
         BackupFolder = os.path.join(BackupFolder,'Tencent Files')
         os.makedirs(BackupFolder)
         copyFiles(sourceTencentFiles,BackupFolder)
-        GetSize(sourceTencentFiles,'Tencent Files')
     else:
-        SmartHint(os.path.join(BackupFolder,"Tencent Files"),'Tencent Files')
         shutil.move(os.path.join(BackupFolder,"Tencent Files"), sourceTencentFiles)
-        print("Put back Tencent Files successfully!")
+    GetSize(sourceTencentFiles,'Tencent Files',IsBackup)
   
 def BusDriver(sourceBusDriver,BackupFolder,IsBackup):
+    SmartHint(sourceBusDriver,os.path.join(BackupFolder,"Bus Driver"),'Bus Driver',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceBusDriver,'Bus Driver')
         BackupFolder = os.path.join(BackupFolder,'Bus Driver')
         os.makedirs(BackupFolder)
         copyFiles(sourceBusDriver,BackupFolder)
-        GetSize(sourceBusDriver,'Bus Driver')
     else:
-        SmartHint(os.path.join(BackupFolder,"Bus Driver"),'Bus Driver')
         shutil.move(os.path.join(BackupFolder,"Bus Driver"), sourceBusDriver)
-        print("Put back Bus Driver successfully!")
+    GetSize(sourceBusDriver,'Bus Driver',IsBackup)
 
 def WeChatFiles(sourceWeChat,BackupFolder,IsBackup):
+    SmartHint(sourceWeChat,os.path.join(BackupFolder,"WeChat Files"),'WeChat Files',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceWeChat,'WeChat Files')
         BackupFolder = os.path.join(BackupFolder,'WeChat Files')
         os.makedirs(BackupFolder)
         copyFiles(sourceWeChat,BackupFolder)
-        GetSize(sourceWeChat,'WeChat Files')
     else:
-        SmartHint(os.path.join(BackupFolder,"WeChat Files"),'WeChat Files')
         shutil.move(os.path.join(BackupFolder,"WeChat Files"), sourceWeChat)
-        print("Put back WeChat Files successfully!")
+    GetSize(sourceWeChat,'WeChat Files',IsBackup)
 
 def iTunes(sourceiTunes,BackupFolder,IsBackup):
+    SmartHint(sourceiTunes,os.path.join(BackupFolder,"iTunes"),'iTunes',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceiTunes,'iTunes')
         BackupFolder = os.path.join(BackupFolder,'iTunes')
         os.makedirs(BackupFolder)
         copyFiles(sourceiTunes,BackupFolder)
-        GetSize(sourceiTunes,'iTunes')
     else:
-        SmartHint(os.path.join(BackupFolder,"iTunes"),'iTunes')
         shutil.move(os.path.join(BackupFolder,"iTunes"), sourceiTunes)
-        print("Put back iTunes successfully!")
+    GetSize(sourceiTunes,'iTunes',IsBackup)
 
 def PipConfig(sourcePipConfig,BackupFolder,IsBackup):
+    SmartHint(sourcePipConfig,os.path.join(BackupFolder,'pip'),'Pip config file',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourcePipConfig,'Pip config file')
         BackupFolder = os.path.join(BackupFolder,'pip')
         os.makedirs(BackupFolder)
         copyFiles(sourcePipConfig,BackupFolder)
-        GetSize(sourcePipConfig,'Pip config file')
     else:
-        SmartHint(os.path.join(BackupFolder,'pip'),'Pip config file')
         shutil.move(os.path.join(BackupFolder,'pip'), sourcePipConfig)
-        print("Put back Pip config file successfully!")
+    GetSize(sourcePipConfig,'Pip config file',IsBackup)
 
 def ChineseParents(sourceChineseParents,BackupFolder,IsBackup):
+    SmartHint(sourceChineseParents,os.path.join(BackupFolder,'中国式家长'),'Chinese Parents',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceChineseParents,'Chinese Parents')
         BackupFolder = os.path.join(BackupFolder,'中国式家长')
         os.makedirs(BackupFolder)
         copyFiles(sourceChineseParents,BackupFolder)
-        GetSize(sourceChineseParents,'Chinese Parents')
     else:
-        SmartHint(os.path.join(BackupFolder,'中国式家长'),'Chinese Parents')
         shutil.move(os.path.join(BackupFolder,'中国式家长'), sourceChineseParents)
-        print("Put back Chinese Parents successfully!")
+    GetSize(sourceChineseParents,'Chinese Parents',IsBackup)
 
 def TennisTitans(sourceTennisTitans,BackupFolder,IsBackup):
+    SmartHint(sourceTennisTitans,os.path.join(BackupFolder,'Tennis Titans'),'Tennis Titans',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceTennisTitans,'Tennis Titans')
         BackupFolder = os.path.join(BackupFolder,'Tennis Titans')
         os.makedirs(BackupFolder)
         copyFiles(sourceTennisTitans,BackupFolder)
-        GetSize(sourceTennisTitans,'Tennis Titans')
     else:
-        SmartHint(os.path.join(BackupFolder,'Tennis Titans'),'Tennis Titans')
         shutil.move(os.path.join(BackupFolder,'Tennis Titans'), sourceTennisTitans)
-        print("Put back Tennis Titans successfully!")
+    GetSize(sourceTennisTitans,'Tennis Titans',IsBackup)
 
 def Jeep4x4(sourceJeep4x4,BackupFolder,IsBackup):
+    SmartHint(sourceJeep4x4,os.path.join(BackupFolder,'Daimler'),'Jeep 4x4',IsBackup)
     if IsBackup == '1':
-        SmartHint(sourceJeep4x4,'Jeep 4x4')
         BackupFolder = os.path.join(BackupFolder,'Daimler')
         os.makedirs(BackupFolder)
         copyFiles(sourceJeep4x4,BackupFolder)
-        GetSize(sourceJeep4x4,'Jeep 4x4')
     else:
-        SmartHint(os.path.join(BackupFolder,'Daimler'),'Jeep 4x4')
         shutil.move(os.path.join(BackupFolder,'Daimler'), sourceJeep4x4)
-        print("Put back Jeep 4x4 successfully!")
+    GetSize(sourceJeep4x4,'Jeep 4x4',IsBackup)
         
 def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4):
     BackupFolder = SearchBackupFolder()
@@ -343,17 +321,25 @@ def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
     print("===================================================")
     ExitOrNot()
 
-def SmartHint(Source,Fun):
+def SmartHint(Source,Target,Fun,IsBackup):
     size = 0
-    for root, dirs, files in os.walk(Source):
-        for names in files:
-            myfiles = os.path.join(root,names)
-            size += sum([os.path.getsize(myfiles)])
-    
+    if IsBackup == '1':
+        for root, dirs, files in os.walk(Source):
+            for names in files:
+                myfiles = os.path.join(root,names)
+                size += sum([os.path.getsize(myfiles)])
+    else:
+        for root, dirs, files in os.walk(Target):
+            for names in files:
+                myfiles = os.path.join(root,names)
+                size += sum([os.path.getsize(myfiles)])
+
     if size > (1024.00*1024.00*100.00):
-        print ("Processing the large file "+ Fun + " now and please wait a moment...")
-    
-    
+        if IsBackup == '1':
+            print ("Backing up the large file "+ Fun + " now and please wait a moment...")
+        else:
+            print ("Putting back the large file "+ Fun + " now and please wait a moment...")
+
 def DeleteBackupFolder(BackupFolder,IsBackup):
     if not os.listdir(BackupFolder):
         shutil.rmtree(BackupFolder)
@@ -417,23 +403,38 @@ def copyFiles(sourceDir, targetDir):
         if os.path.isdir(sourceFile): 
             copyFiles(sourceFile, targetFile)
 
-def GetSize(Source,Fun):
+def GetSize(Source,Fun,IsBackup):
     size = 0
     for root, dirs, files in os.walk(Source):
         for names in files:
             myfiles = os.path.join(root,names)
             size += sum([os.path.getsize(myfiles)])
-            
+      
     if size > (1024.00*1024.00*1024.00*1024.00):
-        print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00/1024.00/1024.00), "TB")
+        if IsBackup == '1':
+            print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00/1024.00/1024.00), "TB")
+        else:
+            print("Put back " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00/1024.00/1024.00), "TB")
     elif size > (1024.00*1024.00*1024.00):
-        print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00/1024.00), "GB")
+        if IsBackup == '1':
+            print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00/1024.00), "GB")
+        else:
+            print("Put back " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00/1024.00), "GB")
     elif size > (1024.00*1024.00):
-        print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00), "MB")
+        if IsBackup == '1':
+            print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00), "MB")
+        else:
+            print("Put back " + Fun + " successfully! --- %.2f" % (size/1024.00/1024.00), "MB")
     elif size > (1024.00):
-        print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00), "KB")
+        if IsBackup == '1':
+            print("Backup " + Fun + " successfully! --- %.2f" % (size/1024.00), "KB")
+        else:
+            print("Put back " + Fun + " successfully! --- %.2f" % (size/1024.00), "KB")
     else:
-        print("Backup " + Fun + " successfully! --- %.2f" % (size), "B")
+        if IsBackup == '1':
+            print("Backup " + Fun + " successfully! --- %.2f" % (size), "B")
+        else:
+            print("Put back " + Fun + " successfully! --- %.2f" % (size), "B")
 
 if __name__ == "__main__":
     source2Kfolder = os.path.join(os.environ['AppData'],'2K Sports') 
