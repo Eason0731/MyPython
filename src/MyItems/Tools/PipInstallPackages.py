@@ -1,7 +1,9 @@
 import os,time
 
 def PipInstall():
-    PackagesList = ['certifi'
+    PackagesList = [
+    'asgiref'
+    ,'certifi'
     ,'chardet'
     ,'ddt'
     ,'Django'
