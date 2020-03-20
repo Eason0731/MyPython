@@ -55,7 +55,7 @@ def BackupOrPutBack(Code):
         print ("Putting back now..........")
         if os.path.exists(GamePath):
             print ("Deleting original game datas")
-            shutil.rmtree(GamePath)
+            shutil.rmtree(GamePath,ignore_errors=True)
             
         shutil.copytree(BackupFoloder,GamePath)
         if os.path.exists(GamePath):
