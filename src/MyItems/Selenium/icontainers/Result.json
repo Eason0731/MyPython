@@ -1,0 +1,12 @@
+{
+ 1:{'surcharges':9349.2,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13473.84,'result':True},
+ 2:{'surcharges':9349.2,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13473.84,'result':True},
+ 3:{'surcharges':9423.4,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13625.04,'result':True},
+ 4:{'surcharges':9423.4,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13625.04,'result':True},
+ 5:{'surcharges':9720.2,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13921.84,'result':True},
+ 6:{'surcharges':9746.7,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13952.34,'result':True},
+ 7:{'surcharges':9746.7,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':13952.34,'result':True},
+ 8:{'surcharges':9914.72,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':14039.36,'result':True},
+ 9:{'surcharges':9932.2,'adminstration'：10.0,'local':335.39,'inland':506.18,'total':14133.84,'result':True},
+ 10:{'surcharges':10009.58,'adminstration'：10.0,'local':480.29,'inland':506.18,'total':14134.22,'result':True},
+}
