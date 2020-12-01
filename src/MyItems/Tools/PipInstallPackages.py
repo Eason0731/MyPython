@@ -2,27 +2,31 @@ import os,time
 
 def PipInstall():
     PackagesList = [
-    'asgiref'
-    ,'certifi'
+    'asgiref'
+    ,'certifi'
     ,'chardet'
-    ,'ddt'
-    ,'Django'
-    ,'idna'
+    ,'ddt'
+    ,'Django'
+    ,'idna'
+    ,'Naked'
     ,'numpy'
-    ,'Pillow'
-    ,'pip'
+    ,'Pillow'
+    ,'pip'
     ,'progressbar'
-    ,'pypiwin32'
-    ,'pytz'
-    ,'pywin32'
+    ,'pycryptodome'
+    ,'pypiwin32'
+    ,'pytz'
+    ,'pywin32'
+    ,'PyYAML'
     ,'rarfile'
-    ,'requests'
+    ,'requests'
     ,'robotframework'
-    ,'selenium'
-    ,'setuptools'
-    ,'sqlparse'
-    ,'unrar'
-    ,'urllib3'
+    ,'selenium'
+    ,'setuptools'
+    ,'shellescape'
+    ,'sqlparse'
+    ,'unrar'
+    ,'urllib3'
     ,'WMI']
     print ("==========================================================")
     StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
