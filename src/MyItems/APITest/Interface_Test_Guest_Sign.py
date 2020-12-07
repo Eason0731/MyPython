@@ -68,8 +68,8 @@ class Guest_Sign(unittest.TestCase):
         print ("===========================================")
 
     def testhSing_Success(self):
-        #MySign = {'eid':27,'phone':'18611001107'}
-        MySign = {'eid':98,'phone':'18611001105'}
+        #MySign = {'eid':11,'phone':'18611001107'}
+        MySign = {'eid':11,'phone':'18611001105'}
         fanhui = requests.post(self.URL,MySign)
         jieguo = fanhui.json()
         self.assertEqual(jieguo['status'],10200)

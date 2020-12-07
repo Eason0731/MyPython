@@ -53,7 +53,7 @@ class Add_Event_With_Sign_And_Time(unittest.TestCase):
         print ("==================================")
     
     def testeAdd_Event(self):
-        Datas={'eid':98,'name':'阿隆索回归F1新闻发布会','limit':5000,'address':'西班牙','start_time':'2020-12-10 17:00:00','time':self.client_time,'sign':self.sign_md5}
+        Datas={'eid':98,'name':'阿隆索回归F1新闻发布会','limit':5000,'address':'西班牙','start_time':'2020-12-20 17:00:00','time':self.client_time,'sign':self.sign_md5}
         r = requests.post(self.URL,data=Datas)
         result = r.json()
         self.assertEqual(result['status'],200)
@@ -62,7 +62,7 @@ class Add_Event_With_Sign_And_Time(unittest.TestCase):
         print ("==================================")
 
     def testeAdd_Event(self):
-        Datas={'eid':98,'name':'阿隆索回归F1新闻发布会','limit':5000,'address':'西班牙','start_time':'2020-12-10 17:00:00','time':self.client_time,'sign':self.sign_md5}
+        Datas={'eid':98,'name':'阿隆索回归F1新闻发布会','limit':5000,'address':'西班牙','start_time':'2020-12-20 17:00:00','time':self.client_time,'sign':self.sign_md5}
         r = requests.post(self.URL,data=Datas)
         result = r.json()
         self.assertEqual(result['status'],200)
@@ -71,7 +71,7 @@ class Add_Event_With_Sign_And_Time(unittest.TestCase):
         print ("==================================")
 
     def testfAdd_Same_ID_Event(self):
-        Datas={'eid':98,'name':'阿隆索回归F1新闻发布会','limit':5000,'address':'西班牙','start_time':'2020-12-10 17:00:00','time':self.client_time,'sign':self.sign_md5}
+        Datas={'eid':98,'name':'阿隆索回归F1新闻发布会','limit':5000,'address':'西班牙','start_time':'2020-12-20 17:00:00','time':self.client_time,'sign':self.sign_md5}
         r = requests.post(self.URL,data=Datas)
         result = r.json()
         self.assertEqual(result['status'],10022)

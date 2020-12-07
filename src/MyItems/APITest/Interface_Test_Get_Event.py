@@ -1,6 +1,4 @@
-import requests
-import unittest
-
+import requests,unittest,HTMLTestReport
 
 class get_event_list_api_test(unittest.TestCase):
     def setUp(self):
@@ -78,4 +76,4 @@ class get_event_list_api_test(unittest.TestCase):
         """
 
 if __name__ == "__main__":
-    unittest.main()
+    HTMLTestReport.HTMLTestReport()

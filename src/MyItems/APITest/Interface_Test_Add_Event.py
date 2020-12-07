@@ -1,5 +1,4 @@
-import unittest,requests
-from datetime import datetime
+import unittest,requests,HTMLTestReport
 
 class Add_Event_Test(unittest.TestCase):
     def setUp(self):
@@ -15,7 +14,7 @@ class Add_Event_Test(unittest.TestCase):
         print ("==============================================")
 
     def testbAdd_Same_ID_Event(self):
-        Add_Event = params={'eid': 11, 'name': 'F1萨基尔大奖赛周四新闻发布会', 'limit': 20, 'status': 1, 'address': '巴林萨基尔赛道', 'start_time': '2020-12-3 15:00:00'}
+        Add_Event = params={'eid': 11, 'name': 'F1萨基尔大奖赛周四新闻发布会', 'limit': 20, 'status': 1, 'address': '巴林萨基尔赛道', 'start_time': '2020-12-23 15:00:00'}
         r = requests.post(self.url,Add_Event)
         result = r.json()
         self.assertEqual(result['status'],10022)
@@ -24,7 +23,7 @@ class Add_Event_Test(unittest.TestCase):
         print ("==============================================")
 
     def testcAdd_Same_Name_Event(self):
-        Add_Event = params={'eid': 121,'name': 'F1萨基尔大奖赛周四新闻发布会', 'limit': 20, 'status': 1, 'address': '巴林萨基尔赛道', 'start_time': '2020-12-3 15:00:00'}
+        Add_Event = params={'eid': 121,'name': 'F1萨基尔大奖赛周四新闻发布会', 'limit': 20, 'status': 1, 'address': '巴林萨基尔赛道', 'start_time': '2020-12-23 15:00:00'}
         r = requests.post(self.url,Add_Event)
         result = r.json()
         self.assertEqual(result['status'],10023)
@@ -42,7 +41,7 @@ class Add_Event_Test(unittest.TestCase):
         print ("==============================================")
 
     def testeAdd_Event(self):
-        Add_Event = params={'eid': 27,'name': '上港上港VS全北现代赛前新闻发布会', 'limit': 20, 'status': 1, 'address': '卡塔尔多哈卡莉法体育场', 'start_time': '2020-12-3 22:00:00'}
+        Add_Event = params={'eid': 27,'name': '上港上港VS全北现代赛前新闻发布会', 'limit': 20, 'status': 1, 'address': '卡塔尔多哈卡莉法体育场', 'start_time': '2020-12-23 22:00:00'}
         r = requests.post(self.url,Add_Event)
         result = r.json()
         self.assertEqual(result['status'],10200)
@@ -50,5 +49,7 @@ class Add_Event_Test(unittest.TestCase):
         print ("Add event success!")
         print ("==============================================")
 
+    
+
 if __name__ == '__main__':
-    unittest.main()
+    HTMLTestReport.HTMLTestReport()
