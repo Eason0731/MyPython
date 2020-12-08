@@ -2,32 +2,53 @@ import os,time
 
 def PipInstall():
     PackagesList = [
-    'asgiref'
-    ,'certifi'
+    'asgiref'
+    ,'certifi'
+    ,'cffi'
     ,'chardet'
-    ,'ddt'
-    ,'Django'
-    ,'idna'
-    ,'Naked'
+    ,'click'
+    ,'configargparse'
+    ,'ddt'
+    ,'Django'
+    ,'flask'  
+    ,'flask-basicaut'
+    ,'gevent'
+    ,'geventhttpclie'
+    ,'greenlet'
+    ,'idna'
+    ,'itsdangerous'
+    ,'jinja2'
+    ,'locust'
+    ,'markupsafe'
+    ,'msgpack'
+    ,'Naked'
     ,'numpy'
-    ,'Pillow'
-    ,'pip'
+    ,'Pillow'
+    ,'pip'
     ,'progressbar'
-    ,'pycryptodome'
-    ,'pypiwin32'
-    ,'pytz'
-    ,'pywin32'
-    ,'PyYAML'
+    ,'psutil'
+    ,'pycparser'
+    ,'pycryptodome'
+    ,'pypiwin32'
+    ,'pytz'
+    ,'pywin32'
+    ,'PyYAML'
+    ,'pyzmq'
     ,'rarfile'
-    ,'requests'
+    ,'requests'
     ,'robotframework'
-    ,'selenium'
-    ,'setuptools'
-    ,'shellescape'
-    ,'sqlparse'
-    ,'unrar'
-    ,'urllib3'
-    ,'WMI']
+    ,'selenium'
+    ,'setuptools'
+    ,'shellescape'
+    ,'six'
+    ,'sqlparse'
+    ,'unrar'
+    ,'urllib3'
+    ,'werkzeug'
+    ,'WMI'
+    ,'zope.event'
+    ,'zope.interface']
+    
     print ("==========================================================")
     StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
     Install = 0
