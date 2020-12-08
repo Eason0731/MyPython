@@ -5,7 +5,9 @@ class UserBehavior(TaskSet):
         self.login()
 
     def login(self):
-        self.client.post("/login_action",{"username":"admin","password":"admin123456"})
+        self.client.post("/login_action/",params={"username":"admin","password":"admin123456"}) #无Request Fail记录
+        #self.client.post("/login_action/",data={"username":"admin","password":"admin123456"}) #有Request Fail记录
+        #self.client.post("/login_action/",{"username":"admin","password":"admin123456"}) #有Request Fail记录
 
     @task(2)
     def event_manage(self):
