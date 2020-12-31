@@ -4,45 +4,65 @@ def PipInstall():
     PackagesList = [
     'asgiref'
     ,'certifi'
+    ,'cffi'
     ,'chardet'
+    ,'click'
+    ,'configargparse'
     ,'ddt'
     ,'Django'
+    ,'flask'  
+    ,'flask-basicaut'
+    ,'gevent'
+    ,'geventhttpclie'
+    ,'greenlet'
     ,'idna'
+    ,'itsdangerous'
+    ,'jinja2'
+    ,'locust'
+    ,'markupsafe'
+    ,'msgpack'
     ,'Naked'
     ,'numpy'
     ,'Pillow'
     ,'pip'
     ,'progressbar'
+    ,'psutil'
+    ,'pycparser'
     ,'pycryptodome'
     ,'pypiwin32'
     ,'pytz'
     ,'pywin32'
     ,'PyYAML'
+    ,'pyzmq'
     ,'rarfile'
     ,'requests'
     ,'robotframework'
     ,'selenium'
     ,'setuptools'
     ,'shellescape'
+    ,'six'
     ,'sqlparse'
     ,'unrar'
     ,'urllib3'
-    ,'WMI']
+    ,'werkzeug'
+    ,'WMI'
+    ,'zope.event'
+    ,'zope.interface']
     
     print ("==========================================================")
     StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
     Install = 0
     InstallList = []
-
+    
     Installed = 0
     InstalledList = []
 
     NoUpdated = 0
     NoUpdatedList = []
-
+    
     Updated = 0
     UpdatedList = []
-
+    
     for myPackage in PackagesList:
         InstallPackagesList = os.popen('pip list')
         UpdatePackagesList = os.popen('pip list --outdate')
@@ -63,7 +83,7 @@ def PipInstall():
             print ('No need to update ' + myPackage)
             NoUpdated = NoUpdated + 1
             NoUpdatedList.append(myPackage)
-
+        
         print ("==========================================================")
     if Install == 0:
         if Installed == 1:
