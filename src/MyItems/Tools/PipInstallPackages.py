@@ -5,6 +5,7 @@ def PipInstall():
     'asgiref'
     ,'certifi'
     ,'chardet'
+    ,'charset-normalizer'
     ,'ddt'
     ,'Django'
     ,'idna'
