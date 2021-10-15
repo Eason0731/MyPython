@@ -3,18 +3,25 @@ import os,time
 def PipInstall():
     PackagesList = [
     'asgiref'
+    ,'async-generator'
+    ,'attrs'
     ,'certifi'
+    ,'cffi'
     ,'chardet'
     ,'charset-normalizer'
+    ,'cryptography'
     ,'ddt'
     ,'Django'
+    ,'h11'
     ,'idna'
     ,'Naked'
-    ,'numpy'
+    ,'outcome'
     ,'Pillow'
     ,'pip'
     ,'progressbar'
+    ,'pycparser'
     ,'pycryptodome'
+    ,'pyOpenSSL'
     ,'pypiwin32'
     ,'pytz'
     ,'pywin32'
@@ -25,10 +32,16 @@ def PipInstall():
     ,'selenium'
     ,'setuptools'
     ,'shellescape'
+    ,'six'
+    ,'sniffio'
+    ,'sortedcontainers'
     ,'sqlparse'
+    ,'trio'
+    ,'trio-websocket'
     ,'unrar'
     ,'urllib3'
-    ,'WMI']
+    ,'WMI'
+    ,'wsproto']
     
     print ("==========================================================")
     StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
