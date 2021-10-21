@@ -15,6 +15,7 @@ def PipInstall():
     ,'h11'
     ,'idna'
     ,'Naked'
+    ,'numpy'
     ,'outcome'
     ,'Pillow'
     ,'pip'
