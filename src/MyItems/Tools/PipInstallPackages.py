@@ -5,7 +5,6 @@ def PipInstall():
     'asgiref'
     ,'async-generator'
     ,'attrs'
-    ,'backports.zoneinfo'
     ,'certifi'
     ,'cffi'
     ,'chardet'
