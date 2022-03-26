@@ -24,6 +24,7 @@ def PipInstall():
     ,'pycryptodome'
     ,'pyOpenSSL'
     ,'pypiwin32'
+    ,'PySocks'
     ,'pytz'
     ,'pywin32'
     ,'PyYAML'
