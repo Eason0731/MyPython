@@ -1,7 +1,7 @@
 #coding=utf-8 
 import os,shutil,time
 
-def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames):
+def MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose):
     Choose = input("""
 =========Welcome to Backup Archive Files===========
 1. Backup archive files before reinstall Widnows
@@ -11,13 +11,13 @@ Press AnyKey to Exit
 
 Please Choose:""")
     if Choose == '1':
-        Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames)
+        Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose)
     elif Choose == '2':
-        PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames)
+        PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose)
     else:
         exit(0)
     
-def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames):
+def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose):
     IsBackup = '1'
     BackupFolder = time.strftime("%Y%m%d",time.localtime()) + "_Backup"
     BackupFolder = os.path.join("D:\\",BackupFolder)
@@ -28,11 +28,11 @@ def Backup(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver
     os.makedirs(BackupFolder)
     print("Create backup folder: " + BackupFolder + " successfully!")
     print("===================================================")
-    MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,BackupFolder,IsBackup)
+    MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose,BackupFolder,IsBackup)
     print("===================================================")
     ExitOrNot()
         
-def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,BackupFolder,IsBackup):
+def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose,BackupFolder,IsBackup):
     print(time.strftime("Start time :%Y-%m-%d %X",time.localtime())+ "\n")
     Info = "'s archive files on this PC"
     if IsBackup == '1':
@@ -106,6 +106,12 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
             PopCapGames(sourcePopCapGames,BackupFolder,IsBackup)
         else:
             print("Won't backup -- Not found PopCapGames" + Info)
+        print("                                ")
+
+        if os.path.exists(sourceUntitledGoose):
+            UntitledGoose(sourceUntitledGoose,BackupFolder,IsBackup)
+        else:
+            print("Won't backup -- Not found Untitled Goose" + Info)
         print("                                ")
         
     else:
@@ -204,6 +210,14 @@ def MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
                 PopCapGames(sourcePopCapGames,BackupFolder,IsBackup)
             else:
                 print("Won't put back -- Path of PopCap Games " + sourcePopCapGames + " had existed")
+            print("                                ")
+
+        if os.path.exists(os.path.join(BackupFolder,'Untitled Goose Game')):
+            i = i + 1   
+            if not os.path.exists(sourceUntitledGoose):
+                UntitledGoose(sourceUntitledGoose,BackupFolder,IsBackup)
+            else:
+                print("Won't put back -- Path of Untitled Goose " + sourceUntitledGoose + " had existed")
             print("                                ")
         
         if i == 0:
@@ -332,8 +346,18 @@ def PopCapGames(sourcePopCapGames,BackupFolder,IsBackup):
     else:
         shutil.move(os.path.join(BackupFolder,'PopCap Games'), sourcePopCapGames)
     GetSize(sourcePopCapGames,'PopCap Games',IsBackup)
+
+def UntitledGoose(sourceUntitledGoose,BackupFolder,IsBackup):
+    SmartHint(sourceUntitledGoose,os.path.join(BackupFolder,'Untitled Goose Game'),'Untitled Goose',IsBackup)
+    if IsBackup == '1':
+        BackupFolder = os.path.join(BackupFolder,'Untitled Goose Game')
+        os.makedirs(BackupFolder)
+        copyFiles(sourceUntitledGoose,BackupFolder)
+    else:
+        shutil.move(os.path.join(BackupFolder,'Untitled Goose Game'), sourceUntitledGoose)
+    GetSize(sourceUntitledGoose,'Untitled Goose',IsBackup)
         
-def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames):
+def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose):
     BackupFolder = SearchBackupFolder()
     print("===================================================")
     if 'Not Exists Path' in BackupFolder:
@@ -341,7 +365,7 @@ def PutBack(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDrive
     else:
         print("Backup folder is : " + BackupFolder + " \n")
         IsBackup = '2'
-        MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,BackupFolder,IsBackup)
+        MyFiles(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose,BackupFolder,IsBackup)
     print("===================================================")
     ExitOrNot()
 
@@ -391,7 +415,7 @@ def ExitOrNot():
     while(True):
         cc = input("Back to main menu? (Y/N)")
         if cc.lower() == 'y':
-            MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames)
+            MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose)
             break
         elif cc.lower() == 'n':
             exit(0)
@@ -473,5 +497,6 @@ if __name__ == "__main__":
     sourceTennisTitans = os.path.join(os.environ['AppData'],'Macromedia','Director MX 2004','Tennis Titans')
     sourceJeep4x4 = os.path.join(os.environ['AppData'],'Daimler')
     sourcePopCapGames = os.path.join(os.environ['ProgramData'],'PopCap Games')
+    sourceUntitledGoose = os.path.join(os.environ['UserProfile'],'AppData','LocalLow','House House','Untitled Goose Game')
     
-    MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames)
+    MainMethod(source2Kfolder,sourcePES,sourceTDU,sourceTencentFiles,sourceBusDriver,sourceWeChat,sourceiTunes,sourcePipConfig,sourceChineseParents,sourceTennisTitans,sourceJeep4x4,sourcePopCapGames,sourceUntitledGoose)
