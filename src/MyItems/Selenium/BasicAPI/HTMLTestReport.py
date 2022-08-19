@@ -28,8 +28,8 @@ def New_Report(Test_Report_Path):
     lists.sort(key=lambda fn: os.path.getmtime(Test_Report_Path + "\\" + fn)) # 按时间排序
     Latest_Report_Path = os.path.join(Test_Report_Path, lists[-1]) # 获取最新的文件保存到Latest_Report_Path
     print("最新的测试报告文件为:" + Latest_Report_Path)
-    SendMail.Send_Mail_by_Sina(Latest_Report_Path) #通过新浪邮箱发送报告
-    SendMail.Send_Mail_by_QQ(Latest_Report_Path) #通过QQ邮箱发送报告
+    SendMail.Via_Sina(Latest_Report_Path) #通过新浪邮箱发送报告
+    SendMail.Via_QQ(Latest_Report_Path) #通过QQ邮箱发送报告
     return Latest_Report_Path
 
 if __name__ == '__main__':
