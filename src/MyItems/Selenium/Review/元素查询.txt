@@ -1,0 +1,84 @@
+搜狗：https://www.sogou.com
+首页标题名:"搜狗搜索引擎 - 上网从搜狗开始"
+
+搜索框 -- id:query
+搜索按钮 -- id:stb
+搜索热词框 -- class:suglist,tag_name:li,根据lid属性值搜索
+
+标题名：Hello Selenium - 搜狗搜索
+
+
+---------------------
+必应：https://cn.bing.com
+首页标题名:"微软 Bing 搜索 - 国内版"
+
+搜索框 -- id:sb_form_q
+搜索按钮 -- id:search_icon (最新) \ sb_form_go （废弃）
+搜索热词框 -- class:sa_drw,tag_name:li,根据id属性值搜索,
+
+id范围：
+IE:sa_5003  -- sa_5010
+Internet Explorer:sa_5004  -- sa_5010
+Chrome: sa_5017 -- sa_5024
+Firefox: sa_5017 -- sa_5024
+
+标题名：Hello Selenium - 国内版 Bing（废弃）
+Hello Selenium - 搜索（废弃）
+Hello Selenium - Search (最新) 
+
+---------------------
+360搜索：https://www.so.com/?src=so.360.cn
+首页标题名:"360搜索，SO靠谱"
+
+搜索框 -- name:q ,id:input
+搜索按钮 -- id:search-button
+搜索热词框 -- class:ac_menu,tag_name:li,根据ac_index属性值搜索
+
+标题名：Hello Selenium_360搜索
+
+---------------------
+火狐浏览器本地位置：C:\Program Files\Mozilla Firefox
+
+是自定义的Firefox浏览器配置文件的路径：（每台机器都不一样）
+C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles\6kqyhs92.WebDriver
+Python的表达路径：os.path.join(os.environ['APPDATA'],'Mozilla','Firefox','Profiles','6kqyhs92.WebDriver')
+
+打开Firefox浏览器自定义配置文件的命令：
+firefox.exe -ProfileManager -no-remote
+
+---------------------
+from selenium.webdriver.common.keys import Keys,引入键盘模拟按键方法
+
+---------------------
+Edge浏览器安装位置：
+32位：C:\\Program Files (x86)\\Microsoft\\Edge\\Application
+64位：C:\\Program Files\\Microsoft\\Edge\\Application
+
+---------------------
+从Selenium 4.0 开始发现的问题：
+DeprecationWarning: find_element_by_* commands are deprecated. Please use find_element()解决方案：
+
+from selenium.webdriver.common.by import By,引入元素定位函数By方法，之前的find_element(s)_by_*从Selenium4.0开始废弃
+
+例如：
+driver.find_element(By.ID/NAME/XPATH,"元素名称")，ID/NAME/XPATH必须大写
+driver.find_elements(By.TAG_NAME/CSS_SELECTOR,"元素名称")，TAG_NAME/CSS_SELECTOR必须大写
+
+参考网页：
+https://blog.csdn.net/qq_45007567/article/details/120829410
+https://blog.csdn.net/weixin_41635857/article/details/120863053
+
+---------------------
+从Selenium 4.0 开始发现的问题：
+DeprecationWarning: executable_path has been deprecated, please pass in a Service object解决方案：
+
+from selenium.webdriver.chrome.service import Service,引入chrome浏览器的服务类Service
+
+将IE,Chrome,Edge浏览器驱动文件的路径，封装写入Service类中(Firefox不需要):
+Ser = Service("chrome浏览器驱动文件本地路径(绝对路径，相对路径都行)")
+driver = webdriver.Chrome(serivce=Ser) 在返回浏览器的参数中，将原来的浏览器驱动文件路径地址替换为serivce
+
+参考网页：
+https://blog.csdn.net/m0_62298204/article/details/120802053
+https://blog.csdn.net/m0_47748508/article/details/120969148
+---------------------
