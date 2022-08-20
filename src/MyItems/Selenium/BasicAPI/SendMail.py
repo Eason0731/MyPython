@@ -12,7 +12,7 @@ def Via_QQ(Latest_Report_Path): #发送邮件方法
     #password = 'uvwugrwppapdcahd' #旧的授权码
     password = 'wqcvkpqqhmbjcaaf'#发件箱密码
     sender = 'lonlon29@qq.com' #发件人邮箱
-    receiver = ['lonlon29@sina.cn','Eason.Zhang0731@outlook.com'] #收件人邮箱
+    receiver = ['lonlon29@sina.cn','Eason.Zhang0731@outlook.com','baron0037@sohu.com','easonzhang0731@sina.com'] #收件人邮箱
     mailname = 'qq'
     Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_Report_Path)
     """
@@ -64,13 +64,13 @@ def Via_QQ(Latest_Report_Path): #发送邮件方法
 
 def Via_Sina(Latest_Report_Path): #发送邮件方法
     #-----------1.跟发件相关的参数------
-    smtpserver = 'smtp.sina.cn' #发件服务器
+    smtpserver = 'smtp.sina.com' #发件服务器
     port = 25 #端口
-    username = 'lonlon29@sina.cn' #发件箱用户名
+    username = 'easonzhang0731@sina.com' #发件箱用户名
     #password = '2e059d17a6db438f' #旧的授权码
-    password = 'e7be22189ff09318'#发件箱密码
-    sender = 'lonlon29@sina.cn' #发件人邮箱
-    receiver = ['lonlon29@qq.com','Eason.Zhang0731@outlook.com'] #收件人邮箱
+    password = '3f2dd459b3b642f2'#发件箱密码
+    sender = 'easonzhang0731@sina.com' #发件人邮箱
+    receiver = ['lonlon29@qq.com','Eason.Zhang0731@outlook.com','baron0037@sohu.com','lonlon29@sina.cn'] #收件人邮箱
     mailname = 'sina'
     Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_Report_Path)
     """
@@ -115,7 +115,18 @@ def Via_Sina(Latest_Report_Path): #发送邮件方法
     smtp.sendmail(sender, receiver, msg.as_string()) # 发送者和接收者
     smtp.quit()
     print("邮件已通过新浪邮箱发出！注意查收。")
-    """    
+    """
+
+def Via_Sohu(Latest_Report_Path): #发送邮件方法
+    #-----------1.跟发件相关的参数------
+    smtpserver = 'smtp.sohu.com' #发件服务器
+    port = 25 #端口
+    username = 'baron0037@sohu.com' #发件箱用户名
+    password = 'WL2REAXGY5'#发件箱密码
+    sender = 'baron0037@sohu.com' #发件人邮箱
+    receiver = ['lonlon29@qq.com','Eason.Zhang0731@outlook.com','lonlon29@sina.cn','easonzhang0731@sina.com'] #收件人邮箱
+    mailname = 'sohu'
+    Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_Report_Path)
 
 def Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_Report_Path):
     # ----------2.编辑邮件的内容------
@@ -128,7 +139,8 @@ def Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_
     body = MIMEText(mail_body, 'html', 'utf-8')
     # 邮件对象
     msg = MIMEMultipart()
-    msg['Subject'] = Header(Current_Time + "执行的自动化回归测试已完成,请查收报告！", 'utf-8').encode() #主题
+    #msg['Subject'] = Header("自动化回归测试已完成,请查收报告！", 'utf-8').encode() #主题
+    msg['Subject'] = Header(Current_Time + " 执行的自动化回归测试已完成,请查收报告！", 'utf-8').encode() #主题
 
     msg['From'] = Header(sender) #发件人
 
@@ -157,12 +169,7 @@ def Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_
 
     ##发送邮件
     smtp = smtplib.SMTP()
-    
-    if mailname == 'qq':
-        smtp.connect('smtp.qq.com') # 邮箱服务器
-    elif mailname == 'sina':
-        smtp.connect('smtp.sina.cn')
-        
+    smtp.connect(smtpserver)
     smtp.login(username, password) # 登录邮箱
     smtp.sendmail(sender, receiver, msg.as_string()) # 发送者和接收者
     smtp.quit()
@@ -171,4 +178,6 @@ def Send_Mail(smtpserver,port,username,password,sender,receiver,mailname,Latest_
         print("邮件已通过QQ邮箱发出！注意查收。")
     elif mailname == 'sina':
         print("邮件已通过新浪邮箱发出！注意查收。")
+    elif mailname == 'sohu':
+        print("邮件已通过搜狐邮箱发出！注意查收。") #注意:新浪邮箱连接不稳定，即使提示发送成功的消息也未必成功发送了邮件，稳定性不如QQ和搜狐邮箱！
         
