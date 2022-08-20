@@ -7,7 +7,9 @@ def HTMLTestReport():
     
     Today = time.strftime("%Y%m%d")
     ReportResultDir = os.path.join('E:\\','Test Report','Selenium Test',Today)
+    
     now = time.strftime("%Y-%m-%d %H-%M-%S") # 按照一定的格式获取当前的时间
+    Execute_Time = time.strftime("%Y-%m-%d %H:%M:%S") # 将执行时间传给邮件主题
     #filename = ReportResultDir + now + '_API_Test_Result.html' 
     if not os.path.exists(os.path.join(ReportResultDir)):
         os.makedirs(os.path.join(ReportResultDir))
@@ -20,17 +22,17 @@ def HTMLTestReport():
     
     fp.close() # 关闭报告文件
 
-    New_Report(ReportResultDir)
+    New_Report(ReportResultDir,Execute_Time)
 
-def New_Report(Test_Report_Path):
+def New_Report(Test_Report_Path,Execute_Time):
     #Test_Report_Path = os.path.join('E:\\','Test Report','Selenium Test',Today)
     lists = os.listdir(Test_Report_Path) # 列出目录的下所有文件和文件夹保存到lists
     lists.sort(key=lambda fn: os.path.getmtime(Test_Report_Path + "\\" + fn)) # 按时间排序
     Latest_Report_Path = os.path.join(Test_Report_Path, lists[-1]) # 获取最新的文件保存到Latest_Report_Path
     print("最新的测试报告文件为:" + Latest_Report_Path)
-    SendMail.Via_Sina(Latest_Report_Path) #通过新浪邮箱发送报告
-    SendMail.Via_QQ(Latest_Report_Path) #通过QQ邮箱发送报告
-    SendMail.Via_Sohu(Latest_Report_Path) #通过搜狐邮箱发送报告
+    SendMail.Via_Sina(Latest_Report_Path,Execute_Time) #通过新浪邮箱发送报告
+    SendMail.Via_QQ(Latest_Report_Path,Execute_Time) #通过QQ邮箱发送报告
+    SendMail.Via_Sohu(Latest_Report_Path,Execute_Time) #通过搜狐邮箱发送报告
     return Latest_Report_Path
 
 if __name__ == '__main__':
