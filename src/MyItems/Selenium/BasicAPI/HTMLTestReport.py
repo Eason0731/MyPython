@@ -7,14 +7,17 @@ def HTMLTestReport():
     
     Today = time.strftime("%Y%m%d")
     ReportResultDir = os.path.join('E:\\','Test Report','Selenium Test',Today)
+
+    now = time.time()
+    timeArray = time.localtime(now)
     
-    #now = time.strftime("%Y-%m-%d %H-%M-%S") # 按照一定的格式获取当前的时间
-    Execute_Time = time.strftime("%Y-%m-%d %H：%M：%S") # 按照一定的格式获取当前的时间，并将执行时间传给邮件主题
+    Report_Name = time.strftime("%Y-%m-%d %H-%M-%S",timeArray) # 按照一定的格式获取当前的时间
+    Execute_Time = time.strftime("%Y-%m-%d %H:%M:%S",timeArray) # 按照一定的格式获取当前的时间，并将执行时间传给邮件主题
     #filename = ReportResultDir + Execute_Time + '_API_Test_Result.html' 
     if not os.path.exists(os.path.join(ReportResultDir)):
         os.makedirs(os.path.join(ReportResultDir))
         
-    filename = os.path.join(ReportResultDir,Execute_Time)+ '_Selenium_Test_Result.html'  # 定义报告存放路径 目前是存在运行的当前目录
+    filename = os.path.join(ReportResultDir,Report_Name)+ '_Selenium_Test_Result.html'  # 定义报告存放路径 目前是存在运行的当前目录
     fp = open(filename, "wb") # 打开file文件流
     
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='Selenium回归测试报告',description='测试用例执行情况 by Eason') # 定义测试报告 
