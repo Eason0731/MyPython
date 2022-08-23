@@ -8,8 +8,10 @@ def HTMLTestReport():
     Today = time.strftime("%Y%m%d")
     ReportResultDir = os.path.join('E:\\','Test Report','Selenium Test',Today)
 
+    time.sleep(3)
     now = time.time()
     timeArray = time.localtime(now)
+    
     
     Report_Name = time.strftime("%Y-%m-%d %H-%M-%S",timeArray) # 按照一定的格式获取当前的时间
     Execute_Time = time.strftime("%Y-%m-%d %H:%M:%S",timeArray) # 按照一定的格式获取当前的时间，并将执行时间传给邮件主题
