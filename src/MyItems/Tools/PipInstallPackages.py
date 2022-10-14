@@ -13,6 +13,7 @@ def PipInstall():
     ,'cryptography'
     ,'ddt'
     ,'Django'
+    ,'exceptio'
     ,'h11'
     ,'idna'
     ,'Naked'
