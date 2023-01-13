@@ -315,7 +315,7 @@ def TDU(sourceTDU,BackupFolder,IsBackup):
     else:
         shutil.move(os.path.join(BackupFolder,"Test Drive Unlimited"), sourceTDU)
     GetSize(sourceTDU,'Test Drive Unlimited',IsBackup)
-'''
+
 def TencentFiles(sourceTencentFiles,BackupFolder,IsBackup):
     SmartHint(sourceTencentFiles,os.path.join(BackupFolder,"Tencent Files"),'Tencent Files',IsBackup)
     if IsBackup == '1':
@@ -325,7 +325,7 @@ def TencentFiles(sourceTencentFiles,BackupFolder,IsBackup):
     else:
         shutil.move(os.path.join(BackupFolder,"Tencent Files"), sourceTencentFiles)
     GetSize(sourceTencentFiles,'Tencent Files',IsBackup)
-'''
+
 def BusDriver(sourceBusDriver,BackupFolder,IsBackup):
     SmartHint(sourceBusDriver,os.path.join(BackupFolder,"Bus Driver"),'Bus Driver',IsBackup)
     if IsBackup == '1':
@@ -335,7 +335,7 @@ def BusDriver(sourceBusDriver,BackupFolder,IsBackup):
     else:
         shutil.move(os.path.join(BackupFolder,"Bus Driver"), sourceBusDriver)
     GetSize(sourceBusDriver,'Bus Driver',IsBackup)
-'''
+
 def WeChatFiles(sourceWeChat,BackupFolder,IsBackup):
     SmartHint(sourceWeChat,os.path.join(BackupFolder,"WeChat Files"),'WeChat Files',IsBackup)
     if IsBackup == '1':
@@ -345,7 +345,7 @@ def WeChatFiles(sourceWeChat,BackupFolder,IsBackup):
     else:
         shutil.move(os.path.join(BackupFolder,"WeChat Files"), sourceWeChat)
     GetSize(sourceWeChat,'WeChat Files',IsBackup)
-'''
+
 def iTunes(sourceiTunes,BackupFolder,IsBackup):
     SmartHint(sourceiTunes,os.path.join(BackupFolder,"iTunes"),'iTunes',IsBackup)
     if IsBackup == '1':
