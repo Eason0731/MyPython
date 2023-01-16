@@ -478,14 +478,14 @@ def SmartHint(Source,Target,Fun,IsBackup):
         else:
             print ("Putting back the large file "+ Fun + " now and please wait a moment...")
 
-def CompareModifyTime(OldfilePath,NewfilePath,Fun):
-    New_ModifyTime = time.ctime(os.path.getmtime(NewfilePath))
-    Old_ModifyTime = time.ctime(os.path.getmtime(OldfilePath))
-
-    if New_ModifyTime < Old_ModifyTime:
-        print ("The latest modify time of original path:" + OldfilePath + " is " + Old_ModifyTime)
-        print ("The latest modify time of backup path:" + NewfilePath + " is " + New_ModifyTime)
-        print ("Won't put back folder " + Fun)
+def CompareModifyTime(OriginalPath,BackupPath,Fun):
+    Original_Mtime = str(os.path.getmtime(OriginalPath))
+    Backup_Mtime = str(os.path.getmtime(BackupPath))
+    
+    if Backup_Mtime < Original_Mtime:
+        print ("The latest modify time of Original path: " + OriginalPath + " is " + time.ctime(os.path.getmtime(OriginalPath)))
+        print ("The latest modify time of Backup path: " + BackupPath + " is " + time.ctime(os.path.getmtime(BackupPath)))
+        print ("Won't put back " + Fun)
         return False
 
     else:
