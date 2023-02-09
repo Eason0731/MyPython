@@ -2,8 +2,7 @@
 首页标题名:"搜狗搜索引擎 - 上网从搜狗开始"
 
 搜索框 -- id:query
-xpath://input[@id="query"],//input[@name="query"],//input[@class="sec-input"]
-//input[contains(@id,"qu")],//input[contains(@name,"que")],//input[starts-with(@id,"qu")],//input[starts-with(@name,"que")]
+xpath://input[@id="query"],//input[@name="query"],//input[contains(@id,"qu")],//input[contains(@name,"que")],//input[starts-with(@id,"qu")],//input[starts-with(@name,"que")]
 
 搜索按钮 -- id:stb
 xpath://input[@value="搜狗搜索"],//input[@type="submit" and @value="搜狗搜索"],//span//input[@type="submit"]
@@ -48,6 +47,15 @@ Firefox: sa_5017 -- sa_5024
 标题名：Hello Selenium - 国内版 Bing（废弃）
 Hello Selenium - 搜索（不挂梯子显示中文）
 Hello Selenium - Search (挂梯子了显示英文) 
+
+20230208新情况：
+1. 2023年2月14日后，IE浏览器被限制无法直接打开必应网站。故有个解决方案：
+   a. 在高端性能电脑上，使用4.7.0及以上版本的IE浏览器驱动，而调用该驱动后，脚本会被运行在Edge浏览器的IE模式下
+   b. 在低端性能电脑上，可选择跳过不执行调用IE浏览器的方法，因为Edge浏览器太占用内存
+
+2. 在执行脚本时，不同于其他两个国内搜索引擎网站，必应往往会出现搜索热词框不出现的情况，即便等待数秒也不出现，解决方案:
+   a. 如若在试跑情况下，可以出现搜索热词框，则在正式跑的时候不必做更改
+   b. 如若在试跑情况下，无法出现搜索热词框，则将脚本改为输入热词后直接点击搜索按钮运行（可以检查搜索按钮的Xpath路径是否正确）
 
 =========================================================================
 360搜索：https://www.so.com/?src=so.360.cn
