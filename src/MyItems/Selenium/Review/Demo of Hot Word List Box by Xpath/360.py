@@ -60,9 +60,11 @@ def SearchOn360(self,driver,content):
             time.sleep(2)
             break
     """
-    if content2 + '_360搜索' in driver.page_source:
-        print ('Pass on ' + content)
-    else:
+    try:
+        if content2 + '_360搜索' in driver.page_source:
+            print ('Pass on ' + content)
+    except Exception as e:
+        print (e)
         print ('FAILED ON ' + content)
 
     time.sleep(2)

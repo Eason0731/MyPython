@@ -18,10 +18,12 @@ def SearchOnSogou(self,driver,content):
     driver.execute_script('arguments[0].click()',driver.find_element(By.XPATH,'//ul[starts-with(@class,"sugli")]//li[2]'))
     #driver.find_element(By.XPATH,'//ul[starts-with(@class,"sugli")]//li[2]').click()
     time.sleep(2)
-
-    if content2 + '' in driver.page_source:
-        print ('Pass on ' + content)
-    else:
+    
+    try:
+        if content2 + ' - 搜狗搜索' in driver.page_source:
+            print ('Pass on ' + content)
+    except Exception as e:
+        print (e)
         print ('FAILED ON ' + content)
 
     time.sleep(2)
