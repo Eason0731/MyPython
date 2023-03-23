@@ -25,10 +25,15 @@ xpath://input[@id="sb_form_q" and @class="sb_form_q" and @name="q"],//input[@id=
 //input[contains(@id,"sb_form_q")],//input[starts-with(@id,"sb_form_q")],//input[contains(@class,"sb_form_q")],//input[starts-with(@class,"sb_form_q")]
 //input[contains(@name,"q")],//input[starts-with(@name,"q")]
 
-搜索按钮 -- id:search_icon (最新) \ sb_form_go （废弃）
-xpath://input[@id="sb_form_go"],//input[@type="submit" and @id="sb_form_go"],//input[@aria-label="Search"],//input[@name="search"]
-//input[contains(@id,"sb_form_go")],//input[contains(@aria-label,"Search")],//input[contains(@name,"search")],
-//input[starts-with(@id,"sb_form_go")],//input[starts-with(@aria-label,"Search")],//input[starts-with(@name,"search")]
+搜索按钮 -- id:search_icon
+xpath://label[@for="sb_form_go"],//label[@class="search icon tooltip"],//label[@id="search_icon"],//label[@aria-label="搜索网页"]
+总：//label[@for="sb_form_go" and @class="search icon tooltip" and  @id="search_icon" and @aria-label="搜索网页"]
+
+//label[contains(@for,"sb_form_go")],//label[contains(@class,"search icon tool")],//label[contains(@id,"search_ico")],//label[contains(@aria-label,"搜索")]
+总：//label[contains(@for,"sb_form_go") and contains(@class,"search icon tool") and contains  (@id,"search_ico") and contains(@aria-label,"搜索")]
+
+//label[starts-with(@for,"sb_form_g")],//label[starts-with(@class,"search icon")],//label[starts-with(@id,"search_ic")],//label[starts-with(@aria-label,"搜索网")]
+总：//label[starts-with(@for,"sb_form_g") and starts-with(@class,"search icon") and starts-with  (@id,"search_ic") and  starts-with(@aria-label,"搜索网")]
 
 搜索热词框 -- class:sa_drw,tag_name:li,根据id属性值搜索, （不需要热刺搜索框，因为id号一直在变）
 xpath://ul[@class="sa_drw"],//ul[@id="sa_ul"],//ul[@class="sa_drw" and @id="sa_ul"],//ul[@aria-label="建议"]
