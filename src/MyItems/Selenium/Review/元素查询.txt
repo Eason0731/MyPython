@@ -2,9 +2,9 @@
 首页标题名:"搜狗搜索引擎 - 上网从搜狗开始"
 
 搜索框 -- id:query
-xpath://input[@id="query"],//input[@name="query"],//input[@class="sec-input"],//input[contains(@id,"qu")],//input[contains(@name,"que")],//input[contains(@class,"sec")],//input[starts-with(@id,"qu")],//input[starts-with(@name,"que")],//input[starts-with(@class,"sec-")]
+xpath://input[@id="query"],//input[@name="query"],//input[@class="sec-input active"],//input[contains(@id,"qu")],//input[contains(@name,"que")],//input[contains(@class,"sec")],//input[starts-with(@id,"qu")],//input[starts-with(@name,"que")],//input[starts-with(@class,"sec-")]
 
-总：//input[@id="query" and @name="query" and @class="sec-input"],
+总：//input[@id="query" and @name="query" and @class="sec-input active"],
 //input[contains(@id,"qu") and contains(@name,"que") and contains(@class,"sec")],
 //input[starts-with(@id,"qu") and starts-with(@name,"que") and starts-with(@class,"sec-")]
 
