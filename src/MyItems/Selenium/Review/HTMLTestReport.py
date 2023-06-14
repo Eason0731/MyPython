@@ -36,7 +36,8 @@ def New_Report(Test_Report_Path,Execute_Time):
     print("最新的测试报告文件为:" + Latest_Report_Path)
     SendMail.Via_Sina(Latest_Report_Path,Execute_Time) #通过新浪邮箱发送报告
     SendMail.Via_QQ(Latest_Report_Path,Execute_Time) #通过QQ邮箱发送报告
-    SendMail.Via_Sohu(Latest_Report_Path,Execute_Time) #通过搜狐邮箱发送报告
+    #SendMail.Via_Sohu(Latest_Report_Path,Execute_Time) #通过搜狐邮箱发送报告
+    SendMail.Via_111Mail(Latest_Report_Path,Execute_Time) #通过111完美邮箱发送报告
     return Latest_Report_Path
 
 """

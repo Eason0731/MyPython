@@ -47,7 +47,7 @@ xpath://label[@for="sb_form_go"],//label[@class="search icon tooltip"],//label[@
 //label[contains(@for,"sb_form_go") and contains(@class,"search icon tool") and contains  (@id,"search_ico") and contains(@aria-label,"搜索")],
 //label[starts-with(@for,"sb_form_g") and starts-with(@class,"search icon") and starts-with  (@id,"search_ic") and  starts-with(@aria-label,"搜索网")]
 
-搜索热词框 -- class:sa_drw,tag_name:li,根据id属性值搜索, （不需要热刺搜索框，因为id号一直在变）
+搜索热词框 -- class:sa_drw,tag_name:li,根据id属性值搜索, （不需要热词搜索框，因为id号一直在变）
 xpath://ul[@class="sa_drw"],//ul[@id="sa_ul"],//ul[@aria-label="建议"],//ul[@role="listbox"]
 //ul[contains(@class,"a_d")],//ul[contains(@id,"a_u")],//ul[contains(@aria-label,"建")],//ul[contains(@role,"listb")]
 //ul[starts-with(@class,"sa_dr")],//ul[starts-with(@id,"sa_u")],//ul[starts-with(@aria-label,"建")],//ul[starts-with(@role,"listbo")]
