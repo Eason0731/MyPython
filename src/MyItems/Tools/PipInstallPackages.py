@@ -42,6 +42,7 @@ def PipInstall():
     ,'sqlparse'
     ,'trio'
     ,'trio-websocket'
+    ,'typing_extensions'
     ,'tzdata'
     ,'unrar'
     ,'urllib3'
