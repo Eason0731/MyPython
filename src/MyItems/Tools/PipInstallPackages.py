@@ -2,19 +2,15 @@ import os,time,sys
 
 def PipInstall():
     Pillow = 'Pillow'
-    backports = 'backports.zoneinfo'
+    backports_zoneinfo = ''
 
-    if sys.version_info<=(3,8,4):
+    if '32 bit'in sys.version:
         Pillow = 'Pillow==9.5.0'
-
-    if sys.version_info>=(3,9):
-        backports = 'backports.zoneinfo==0.1.9'
         
     PackagesList = [
     'asgiref'
     ,'async-generator'
     ,'attrs'
-    , backports
     ,'certifi'
     ,'cffi'
     ,'chardet'
@@ -57,6 +53,10 @@ def PipInstall():
     ,'urllib3'
     ,'WMI'
     ,'wsproto']
+
+    if sys.version_info < (3,10):
+        backports_zoneinfo = 'backports.zoneinfo'
+        PackagesList.append(backports_zoneinfo)
     
     print ("==========================================================")
     StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
@@ -126,7 +126,10 @@ def PipInstall():
         else:
             pkg = 'packages have'
         print ("{0} ({1}) ".format(str(Updated),','.join(UpdatedList)) + pkg + " updated successfully on this PC!")
-    #print (os.popen('pip list --outdate').read())
+    if '32 bit'in sys.version:
+        print (os.popen('pip list --outdated | findstr /v Pillow').read())
+    else:
+        print (os.popen('pip list --outdate').read())
     print ("==========================================================")
     print ("Start time :" + StartTime)
     print (time.strftime("End time :%Y-%m-%d %X",time.localtime()))
