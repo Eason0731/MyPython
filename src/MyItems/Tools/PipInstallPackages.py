@@ -1,11 +1,20 @@
-import os,time
+import os,time,sys
 
 def PipInstall():
+    Pillow = 'Pillow'
+    backports = 'backports.zoneinfo'
+
+    if sys.version_info<=(3,8,4):
+        Pillow = 'Pillow==9.5.0'
+
+    if sys.version_info>=(3,9):
+        backports = 'backports.zoneinfo==0.1.9'
+        
     PackagesList = [
     'asgiref'
     ,'async-generator'
     ,'attrs'
-    ,'backports.zoneinfo'
+    , backports
     ,'certifi'
     ,'cffi'
     ,'chardet'
@@ -19,7 +28,7 @@ def PipInstall():
     ,'Naked'
     ,'numpy'
     ,'outcome'
-    ,'Pillow'
+    , Pillow
     ,'pip'
     ,'progressbar'
     ,'pycparser'
@@ -67,9 +76,14 @@ def PipInstall():
         InstallPackagesList = os.popen('pip list')
         UpdatePackagesList = os.popen('pip list --outdate')
         if myPackage not in InstallPackagesList.read():
-            os.system('pip install ' + myPackage)
-            Install = Install + 1
-            InstallList.append(myPackage)
+            if 'already satisfied' in os.popen('pip install ' + myPackage).read():
+                print (myPackage + ' has installed')
+                Installed = Installed + 1
+                InstalledList.append(myPackage)
+            else:
+                os.system('pip install ' + myPackage)
+                Install = Install + 1
+                InstallList.append(myPackage)
         else:
             print (myPackage + ' has installed')
             Installed = Installed + 1
@@ -112,7 +126,7 @@ def PipInstall():
         else:
             pkg = 'packages have'
         print ("{0} ({1}) ".format(str(Updated),','.join(UpdatedList)) + pkg + " updated successfully on this PC!")
-    print (os.popen('pip list --outdate').read())
+    #print (os.popen('pip list --outdate').read())
     print ("==========================================================")
     print ("Start time :" + StartTime)
     print (time.strftime("End time :%Y-%m-%d %X",time.localtime()))
