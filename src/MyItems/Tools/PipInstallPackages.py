@@ -3,10 +3,8 @@ import os,time,sys
 def PipInstall():
     Pillow = 'Pillow'
     backports_zoneinfo = ''
-
     if '32 bit'in sys.version:
         Pillow = 'Pillow==9.5.0'
-        
     PackagesList = [
     'asgiref'
     ,'async-generator'
@@ -53,11 +51,9 @@ def PipInstall():
     ,'urllib3'
     ,'WMI'
     ,'wsproto']
-
     if sys.version_info < (3,10):
         backports_zoneinfo = 'backports.zoneinfo'
         PackagesList.append(backports_zoneinfo)
-    
     print ("==========================================================")
     StartTime = (time.strftime("%Y-%m-%d %X",time.localtime()))
     Install = 0
@@ -126,8 +122,9 @@ def PipInstall():
         else:
             pkg = 'packages have'
         print ("{0} ({1}) ".format(str(Updated),','.join(UpdatedList)) + pkg + " updated successfully on this PC!")
+    print ("                                                          ")
     if '32 bit'in sys.version:
-        print (os.popen('pip list --outdated | findstr /v Pillow').read())
+        print (os.popen('pip list --outdated | findstr /v /r "Pillow"').read()) #findstr /v /r 可以忽略多个第三方的库的包,eg:pip list --outdated | findstr /v /r "numpy pandas scipy",如只需忽略一个包可以用该指令,eg:pip list --outdated | findstr /v Pillow
     else:
         print (os.popen('pip list --outdate').read())
     print ("==========================================================")
