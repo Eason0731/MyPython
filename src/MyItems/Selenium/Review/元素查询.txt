@@ -8,6 +8,13 @@ xpath://input[@id="query"],//input[@name="query"],//input[@class="sec-input acti
 //input[contains(@id,"qu") and contains(@name,"que") and contains(@class,"sec")],
 //input[starts-with(@id,"qu") and starts-with(@name,"que") and starts-with(@class,"sec-")]
 
+µ¥ÒıºÅ°æ±¾£º
+xpath://input[@id='query'],//input[@name='query'],//input[@class='sec-input active'],//input[contains(@id,'qu')],//input[contains(@name,'que')],//input[contains(@class,'sec')],//input[starts-with(@id,'qu')],//input[starts-with(@name,'que')],//input[starts-with(@class,'sec-')]
+
+×Ü£º//input[@id='query' and @name='query' and @class='sec-input active'],
+//input[contains(@id,'qu') and contains(@name,'que') and contains(@class,'sec')],
+//input[starts-with(@id,'qu') and starts-with(@name,'que') and starts-with(@class,'sec-')]
+
 ËÑË÷°´Å¥ -- id:stb
 xpath://input[@id="stb"],//input[@value="ËÑ¹·ËÑË÷"],//input[@type="submit" and @value="ËÑ¹·ËÑË÷"],//span//input[@type="submit"]
 //input[contains(@id,"stb")],//input[contains(@value,"ËÑ¹·ËÑ")],//input[starts-with(@value,"ËÑ¹·ËÑ")],//span//input[contains(@value,"ËÑ¹·ËÑ")],//span//input[starts-with(@value,"ËÑ¹·ËÑ")],//input[starts-with(@id,"st")]
@@ -16,8 +23,19 @@ xpath://input[@id="stb"],//input[@value="ËÑ¹·ËÑË÷"],//input[@type="submit" and @
 //input[contains(@id,"stb") and contains(@value,"ËÑ¹·ËÑ")],
 //input[starts-with(@id,"st") and starts-with(@value,"ËÑ¹·ËÑ")]
 
+µ¥ÒıºÅ°æ±¾£º
+xpath://input[@id='stb'],//input[@value='ËÑ¹·ËÑË÷'],//input[@type='submit' and @value='ËÑ¹·ËÑË÷'],//span//input[@type='submit']
+//input[contains(@id,'stb')],//input[contains(@value,'ËÑ¹·ËÑ')],//input[starts-with(@value,'ËÑ¹·ËÑ')],//span//input[contains(@value,'ËÑ¹·ËÑ')],//span//input[starts-with(@value,'ËÑ¹·ËÑ')],//input[starts-with(@id,'st')]
+
+×Ü£º//input[@id='stb' and @type='submit' and @value='ËÑ¹·ËÑË÷'],
+//input[contains(@id,'stb') and contains(@value,'ËÑ¹·ËÑ')],
+//input[starts-with(@id,'st') and starts-with(@value,'ËÑ¹·ËÑ')]
+
 ËÑË÷ÈÈ´Ê¿ò -- class:suglist,tag_name:li¸ù¾İlidÊôĞÔÖµËÑË÷
 xpath://ul[@class="suglist"],//div//ul[@class="suglist"],//ul[contains(@class,"sugli")],//ul[contains(@class,"suglist")],//ul[starts-with(@class,"sugli")]
+
+µ¥ÒıºÅ°æ±¾£º
+xpath://ul[@class='suglist'],//div//ul[@class='suglist'],//ul[contains(@class,'sugli')],//ul[contains(@class,'suglist')],//ul[starts-with(@class,'sugli')]
 
 ÔÚÕâĞ©xpathÖ®ºó½ÓÉÏli[1-9],¼´¿ÉÔÚËÑË÷ÈÈ´Ê¿òÀïÑ¡ÔñÏÂÀ­ÈÈ´Ê£¬
 ÀıÈç£º//ul[@class="suglist"]//li[3],//ul[@class="suglist"]//li[7]
@@ -37,6 +55,15 @@ xpath://input[@id="sb_form_q"],//input[@class="sb_form_q"],//input[@name="q"]
 //input[contains(@id,"sb_form_q") and contains(@class,"sb_form_q") and contains(@name,"q")],
 //input[starts-with(@class,"sb_form_q") and starts-with(@name,"q") and starts-with(@id,"sb_form_q")]
 
+µ¥ÒıºÅ°æ±¾£º
+xpath://input[@id='sb_form_q'],//input[@class='sb_form_q'],//input[@name='q']
+//input[contains(@id,'sb_form_q')],//input[contains(@class,'sb_form_q')],//input[contains(@name,'q')]
+//input[starts-with(@class,'sb_form_q')],//input[starts-with(@name,'q')],//input[starts-with(@id,'sb_form_q')]
+
+×Ü£º//input[@id='sb_form_q' and @class='sb_form_q' and @name='q'],
+//input[contains(@id,'sb_form_q') and contains(@class,'sb_form_q') and contains(@name,'q')],
+//input[starts-with(@class,'sb_form_q') and starts-with(@name,'q') and starts-with(@id,'sb_form_q')]
+
 ËÑË÷°´Å¥ -- id:search_icon
 xpath://label[@for="sb_form_go"],//label[@class="search icon tooltip"],//label[@id="search_icon"],//label[@aria-label="ËÑË÷ÍøÒ³"]
 //label[contains(@for,"sb_form_go")],//label[contains(@class,"search icon tool")],//label[contains(@id,"search_ico")],//label[contains(@aria-label,"ËÑË÷")]
@@ -44,8 +71,18 @@ xpath://label[@for="sb_form_go"],//label[@class="search icon tooltip"],//label[@
 
 ×Ü£º
 //label[@for="sb_form_go" and @class="search icon tooltip" and  @id="search_icon" and @aria-label="ËÑË÷ÍøÒ³"],
-//label[contains(@for,"sb_form_go") and contains(@class,"search icon tool") and contains  (@id,"search_ico") and contains(@aria-label,"ËÑË÷")],
-//label[starts-with(@for,"sb_form_g") and starts-with(@class,"search icon") and starts-with  (@id,"search_ic") and  starts-with(@aria-label,"ËÑË÷Íø")]
+//label[contains(@for,"sb_form_go") and contains(@class,"search icon tool") and contains(@id,"search_ico") and contains(@aria-label,"ËÑË÷")],
+//label[starts-with(@for,"sb_form_g") and starts-with(@class,"search icon") and starts-with(@id,"search_ic") and starts-with(@aria-label,"ËÑË÷Íø")]
+
+µ¥ÒıºÅ°æ±¾£º
+xpath://label[@for='sb_form_go'],//label[@class='search icon tooltip'],//label[@id='search_icon'],//label[@aria-label='ËÑË÷ÍøÒ³']
+//label[contains(@for,'sb_form_go')],//label[contains(@class,'search icon tool')],//label[contains(@id,'search_ico')],//label[contains(@aria-label,'ËÑË÷')]
+//label[starts-with(@for,'sb_form_g')],//label[starts-with(@class,'search icon')],//label[starts-with(@id,'search_ic')],//label[starts-with(@aria-label,'ËÑË÷Íø')]
+
+×Ü£º
+//label[@for='sb_form_go' and @class='search icon tooltip' and  @id='search_icon' and @aria-label='ËÑË÷ÍøÒ³'],
+//label[contains(@for,'sb_form_go') and contains(@class,'search icon tool') and contains(@id,'search_ico') and contains(@aria-label,'ËÑË÷')],
+//label[starts-with(@for,'sb_form_g') and starts-with(@class,'search icon') and starts-with(@id,'search_ic') and starts-with(@aria-label,'ËÑË÷Íø')]
 
 ËÑË÷ÈÈ´Ê¿ò -- class:sa_drw,tag_name:li,¸ù¾İidÊôĞÔÖµËÑË÷, £¨²»ĞèÒªÈÈ´ÊËÑË÷¿ò£¬ÒòÎªidºÅÒ»Ö±ÔÚ±ä£©
 xpath://ul[@class="sa_drw"],//ul[@id="sa_ul"],//ul[@aria-label="½¨Òé"],//ul[@role="listbox"]
@@ -55,6 +92,15 @@ xpath://ul[@class="sa_drw"],//ul[@id="sa_ul"],//ul[@aria-label="½¨Òé"],//ul[@rol
 ×Ü£º//ul[@class="sa_drw" and @id="sa_ul" and @aria-label="½¨Òé" and @role="listbox"],
 //ul[contains(@class,"a_d") and contains(@id,"a_u") and contains(@aria-label,"½¨") and contains(@role,"listb")],
 //ul[starts-with(@class,"sa_dr") and starts-with(@id,"sa_u") and starts-with(@aria-label,"½¨") and starts-with(@role,"listbo")]
+
+µ¥ÒıºÅ°æ±¾£º
+xpath://ul[@class='sa_drw'],//ul[@id='sa_ul'],//ul[@aria-label='½¨Òé'],//ul[@role='listbox']
+//ul[contains(@class,'a_d')],//ul[contains(@id,'a_u')],//ul[contains(@aria-label,'½¨')],//ul[contains(@role,'listb')]
+//ul[starts-with(@class,'sa_dr')],//ul[starts-with(@id,'sa_u')],//ul[starts-with(@aria-label,'½¨')],//ul[starts-with(@role,'listbo')]
+
+×Ü£º//ul[@class='sa_drw' and @id='sa_ul' and @aria-label='½¨Òé' and @role='listbox'],
+//ul[contains(@class,'a_d') and contains(@id,'a_u') and contains(@aria-label,'½¨') and contains(@role,'listb')],
+//ul[starts-with(@class,'sa_dr') and starts-with(@id,'sa_u') and starts-with(@aria-label,'½¨') and starts-with(@role,'listbo')]
 
 ÔÚÕâĞ©xpathÖ®ºó½ÓÉÏli[1-9],¼´¿ÉÔÚËÑË÷ÈÈ´Ê¿òÀïÑ¡ÔñÏÂÀ­ÈÈ´Ê£¬ÀıÈç£º
 //ul[@class="sa_drw"]//li[5],//ul[@class="sa_drw"]//li[2]
@@ -91,6 +137,15 @@ xpath: //input[@name="q"],//input[@id="input"],//input[@id="input" and @name ="q
 //input[contains(@name,"q") and contains(@id,"input") and contains(@class,"placeholder")],
 //input[starts-with(@name,"q") and starts-with(@id,"input") and starts-with(@class,"placeholder")]
 
+µ¥ÒıºÅ°æ±¾£º
+xpath: //input[@name='q'],//input[@id='input'],//input[@id='input' and @name ='q'],//input[@type='text' and @name ='q'],//input[@class='placeholder lowie-bg']
+//input[contains(@name,'q')],//input[contains(@id,'input')],//input[contains(@class,'placeholder')],
+//input[starts-with(@name,'q')],//input[starts-with(@id,'input')],//input[starts-with(@class,'placeholder')]
+
+×Ü£º//input[@name='q' and @id='input' and @type='text' and @class='placeholder lowie-bg'],
+//input[contains(@name,'q') and contains(@id,'input') and contains(@class,'placeholder')],
+//input[starts-with(@name,'q') and starts-with(@id,'input') and starts-with(@class,'placeholder')]
+
 ËÑË÷°´Å¥ -- id:search-button
 xpath:
 //input[@id="search-button"],//input[@class="skin-search-button"],//input[@value="ËÑË÷"],//input[@type="submit" and @class="skin-search-button"]
@@ -101,6 +156,16 @@ xpath:
 //input[contains(@id,"search-bu") and contains(@class,"skin-search") and contains(@value,"ËÑË÷")],
 //input[starts-with(@id,"search-but") and starts-with(@class,"skin-search-b") and starts-with(@value,"ËÑ")]
 
+µ¥ÒıºÅ°æ±¾£º
+xpath:
+//input[@id='search-button'],//input[@class='skin-search-button'],//input[@value='ËÑË÷'],//input[@type='submit' and @class='skin-search-button']
+//input[contains(@id,'search-bu')],//input[contains(@class,'skin-search')],//input[contains(@value,'ËÑË÷')],
+//input[starts-with(@id,'search-but')],//input[starts-with(@class,'skin-search-b')],//input[starts-with(@value,'ËÑ')]
+
+×Ü£º//input[@id='search-button' and @class='skin-search-button' and @value='ËÑË÷' and @type='submit'],
+//input[contains(@id,'search-bu') and contains(@class,'skin-search') and contains(@value,'ËÑË÷')],
+//input[starts-with(@id,'search-but') and starts-with(@class,'skin-search-b') and starts-with(@value,'ËÑ')]
+
 ËÑË÷ÈÈ´Ê¿ò -- class:ac_menu,tag_name:li,¸ù¾İac_indexÊôĞÔÖµËÑË÷
 xpath://ul[@class="ac_menu"],//ul[@ver="revise"],//ul[@unselectable="on"],//div//ul[@class="ac_menu"]
 //ul[contains(@class,"ac_men")],//ul[contains(@ver,"rev")],//ul[starts-with(@class,"ac_me")],//ul[starts-with(@ver,"revi")]
@@ -108,6 +173,14 @@ xpath://ul[@class="ac_menu"],//ul[@ver="revise"],//ul[@unselectable="on"],//div/
 ×Ü£º//ul[@unselectable="on" and @class="ac_menu" and @ver="revise"],
 //ul[contains(@class,"ac_men") and contains(@ver,"rev")],
 //ul[starts-with(@class,"ac_me") and starts-with(@ver,"revi")]
+
+µ¥ÒıºÅ°æ±¾£º
+xpath://ul[@class='ac_menu'],//ul[@ver='revise'],//ul[@unselectable='on'],//div//ul[@class='ac_menu']
+//ul[contains(@class,'ac_men')],//ul[contains(@ver,'rev')],//ul[starts-with(@class,'ac_me')],//ul[starts-with(@ver,'revi')]
+
+×Ü£º//ul[@unselectable='on' and @class='ac_menu' and @ver='revise'],
+//ul[contains(@class,'ac_men') and contains(@ver,'rev')],
+//ul[starts-with(@class,'ac_me') and starts-with(@ver,'revi')]
 
 ÔÚÕâĞ©xpathÖ®ºó½ÓÉÏli[1-9],¼´¿ÉÔÚËÑË÷ÈÈ´Ê¿òÀïÑ¡ÔñÏÂÀ­ÈÈ´Ê£¬ÀıÈç£º
 //ul[@class="ac_menu"]//li[2],//ul[@class="ac_menu"]//li[4]
@@ -160,3 +233,6 @@ driver = webdriver.Chrome(serivce=Ser) ÔÚ·µ»Øä¯ÀÀÆ÷µÄ²ÎÊıÖĞ£¬½«Ô­À´µÄä¯ÀÀÆ÷Çı¶¯Î
 https://blog.csdn.net/m0_62298204/article/details/120802053
 https://blog.csdn.net/m0_47748508/article/details/120969148
 =========================================================================
+Éı¼¶µ½ÁËSelenium 4.11.0ºó·¢ÏÖÎÊÌâ£º
+FirefoxÎŞ·¨Õı³£ÔÚWinodws 7ÏµÍ³ÏÂÔËĞĞ¡£
+½â¾ö°ì·¨£º»ØÍË4.10.0°æ±¾¿ÉÕı³£ÔËĞĞ¡£
