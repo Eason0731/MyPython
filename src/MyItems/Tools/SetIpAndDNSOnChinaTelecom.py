@@ -14,6 +14,7 @@ def Main():
 4.Switch IP to room 401
 5.Switch IP to DingXiang room 411
 6.Switch IP to room 501
+7.Switch IP to room 6F Office 3
 
 Press AnyKey to Exit
 
@@ -47,6 +48,11 @@ Please choose :""")
     elif Choose == '6':
         Room = "on room 501"
         SetIpAndGateway(['10.6.243.108'],['255.255.255.128'],['10.6.243.1'],Room)
+        SetDNS(['10.5.22.66','10.5.22.67'],Room)
+
+    elif Choose == '7':
+        Room = "on 6F Office 3"
+        SetIpAndGateway(['10.6.228.81'],['255.255.255.0'],['10.6.228.1'],Room)
         SetDNS(['10.5.22.66','10.5.22.67'],Room)
 
     else:
